@@ -19,12 +19,12 @@
 
 """Testcases for create instantiate and execute message."""
 
-from cosmpy.aerial.contract import (
+from kiipy.aerial.contract import (
     create_cosmwasm_execute_msg,
     create_cosmwasm_instantiate_msg,
     create_cosmwasm_migrate_msg,
 )
-from cosmpy.crypto.address import Address
+from kiipy.crypto.address import Address
 
 
 def test_create_instantiate_msg():

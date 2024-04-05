@@ -22,11 +22,11 @@ from pathlib import Path
 import pytest
 from jsonschema import ValidationError
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.aerial.contract import LedgerContract
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.wallet import LocalWallet
+from kiipy.aerial.client import LedgerClient
+from kiipy.aerial.config import NetworkConfig
+from kiipy.aerial.contract import LedgerContract
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.wallet import LocalWallet
 
 
 CONTRACT_PATH = Path(__file__).parent / "../../contracts/simple/simple.wasm"

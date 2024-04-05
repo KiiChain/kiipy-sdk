@@ -20,7 +20,7 @@
 """Test case of Mnemonic module."""
 import unittest
 
-from cosmpy.mnemonic import derive_child_key_from_mnemonic
+from kiipy.mnemonic import derive_child_key_from_mnemonic
 
 
 COSMOS_HD_PATH = "m/44'/118'/0'/0/0"

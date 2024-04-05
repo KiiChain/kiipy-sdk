@@ -21,12 +21,12 @@
 
 import argparse
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.contract import LedgerContract, create_cosmwasm_execute_msg
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx import SigningCfg, Transaction
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.crypto.address import Address
+from kiipy.aerial.client import LedgerClient, NetworkConfig
+from kiipy.aerial.contract import LedgerContract, create_cosmwasm_execute_msg
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.tx import SigningCfg, Transaction
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.crypto.address import Address
 
 
 TOKEN_ID_1 = "680564733841876926926749214863536422912"

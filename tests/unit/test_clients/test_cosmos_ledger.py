@@ -30,23 +30,23 @@
 #
 # from google.protobuf.json_format import MessageToDict, ParseDict
 #
-# from cosmpy.auth.interface import Auth
-# from cosmpy.auth.rest_client import AuthRestClient
-# from cosmpy.bank.rest_client import BankRestClient
-# from cosmpy.clients.crypto import CosmosCrypto
-# from cosmpy.cosmwasm.rest_client import CosmWasmRestClient
-# from cosmpy.crypto.address import Address
-# from cosmpy.crypto.keypairs import PrivateKey
-# from cosmpy.protos.cosmos.auth.v1beta1.auth_pb2 import BaseAccount
-# from cosmpy.protos.cosmos.auth.v1beta1.query_pb2 import (
+# from kiipy.auth.interface import Auth
+# from kiipy.auth.rest_client import AuthRestClient
+# from kiipy.bank.rest_client import BankRestClient
+# from kiipy.clients.crypto import CosmosCrypto
+# from kiipy.cosmwasm.rest_client import CosmWasmRestClient
+# from kiipy.crypto.address import Address
+# from kiipy.crypto.keypairs import PrivateKey
+# from kiipy.protos.cosmos.auth.v1beta1.auth_pb2 import BaseAccount
+# from kiipy.protos.cosmos.auth.v1beta1.query_pb2 import (
 #     QueryAccountRequest,
 #     QueryAccountResponse,
 #     QueryParamsRequest,
 #     QueryParamsResponse,
 # )
-# from cosmpy.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse
-# from cosmpy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
-# from cosmpy.protos.cosmos.tx.v1beta1.service_pb2 import (
+# from kiipy.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse
+# from kiipy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+# from kiipy.protos.cosmos.tx.v1beta1.service_pb2 import (
 #     BroadcastTxRequest,
 #     BroadcastTxResponse,
 #     GetTxRequest,
@@ -56,8 +56,8 @@
 #     SimulateRequest,
 #     SimulateResponse,
 # )
-# from cosmpy.protos.cosmos.tx.v1beta1.tx_pb2 import Tx
-# from cosmpy.tx.interface import TxInterface
+# from kiipy.protos.cosmos.tx.v1beta1.tx_pb2 import Tx
+# from kiipy.tx.interface import TxInterface
 # from tests.helpers import MockRestClient
 #
 # # Private key

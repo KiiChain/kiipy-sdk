@@ -25,16 +25,16 @@ import datetime
 
 from google.protobuf.timestamp_pb2 import Timestamp
 
-from cosmpy.aerial.client import (
+from kiipy.aerial.client import (
     Block,
     DEFAULT_QUERY_INTERVAL_SECS,
     DEFAULT_QUERY_TIMEOUT_SECS,
     LedgerClient,
 )
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse as PbTxResponse
-from cosmpy.protos.tendermint.types.block_pb2 import Block as PbBlock
-from cosmpy.protos.tendermint.types.types_pb2 import Data, Header
+from kiipy.aerial.config import NetworkConfig
+from kiipy.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse as PbTxResponse
+from kiipy.protos.tendermint.types.block_pb2 import Block as PbBlock
+from kiipy.protos.tendermint.types.types_pb2 import Data, Header
 
 
 def test_ledger_client_timeouts():
