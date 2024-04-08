@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.faucet"></a>
+<a id="kiipy.aerial.faucet"></a>
 
-# cosmpy.aerial.faucet
+# kiipy.aerial.faucet
 
 Ledger faucet API interface.
 
-<a id="cosmpy.aerial.faucet.FaucetApi"></a>
+<a id="kiipy.aerial.faucet.FaucetApi"></a>
 
 ## FaucetApi Objects
 
@@ -14,7 +14,31 @@ class FaucetApi()
 
 Faucet API.
 
-<a id="cosmpy.aerial.faucet.FaucetApi.__init__"></a>
+<a id="kiipy.aerial.faucet.FaucetApi.FAUCET_STATUS_PENDING"></a>
+
+#### FAUCET`_`STATUS`_`PENDING
+
+noqa: F841
+
+<a id="kiipy.aerial.faucet.FaucetApi.FAUCET_STATUS_PROCESSING"></a>
+
+#### FAUCET`_`STATUS`_`PROCESSING
+
+noqa: F841
+
+<a id="kiipy.aerial.faucet.FaucetApi.FAUCET_STATUS_COMPLETED"></a>
+
+#### FAUCET`_`STATUS`_`COMPLETED
+
+noqa: F841
+
+<a id="kiipy.aerial.faucet.FaucetApi.FAUCET_STATUS_FAILED"></a>
+
+#### FAUCET`_`STATUS`_`FAILED
+
+noqa: F841
+
+<a id="kiipy.aerial.faucet.FaucetApi.__init__"></a>
 
 #### `__`init`__`
 
@@ -32,7 +56,7 @@ Init faucet API.
 
 - `ValueError`: Network config has no faucet url set
 
-<a id="cosmpy.aerial.faucet.FaucetApi.get_wealth"></a>
+<a id="kiipy.aerial.faucet.FaucetApi.get_wealth"></a>
 
 #### get`_`wealth
 

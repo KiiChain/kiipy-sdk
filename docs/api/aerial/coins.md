@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.coins"></a>
+<a id="kiipy.aerial.coins"></a>
 
-# cosmpy.aerial.coins
+# kiipy.aerial.coins
 
 Parse the coins.
 
-<a id="cosmpy.aerial.coins.parse_coins"></a>
+<a id="kiipy.aerial.coins.parse_coins"></a>
 
 #### parse`_`coins
 
