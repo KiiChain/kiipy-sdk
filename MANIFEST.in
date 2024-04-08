@@ -1,4 +1,4 @@
-recursive-excludecosmpy *.py
+recursive-excludekiipy *.py
 
 exclude *.in
 exclude *.json
