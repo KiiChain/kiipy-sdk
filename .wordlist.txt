@@ -46,6 +46,10 @@ analyzing
 WasmD
 FetchD
 blockchain
+CosmPy
+CosmPy's
+Cosmpy
+cosmpy
 KiiPy
 KiiPy's
 Kiipy
