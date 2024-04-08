@@ -24,11 +24,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Union
 
-from kiipy.aerial.exceptions import (
-    BroadcastError,
-    InsufficientFeesError,
-    OutOfGasError,
-)
+from kiipy.aerial.exceptions import BroadcastError, InsufficientFeesError, OutOfGasError
 from kiipy.crypto.address import Address
 
 
