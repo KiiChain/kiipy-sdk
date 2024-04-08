@@ -46,9 +46,10 @@ analyzing
 WasmD
 FetchD
 blockchain
-CosmPy
-Cosmpy
-cosmpy
+KiiPy
+KiiPy's
+Kiipy
+kiipy
 blockchains
 Cosmwasm
 hashlib
@@ -163,8 +164,6 @@ USD
 aea
 coingecko
 CLI
-CosmPy's
-CosmPy
 isort
 liccheck
 MakeFile
