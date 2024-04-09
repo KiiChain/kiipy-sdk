@@ -15,18 +15,6 @@ class MessageLog()
 
 Message Log.
 
-<a id="kiipy.aerial.tx_helpers.MessageLog.index"></a>
-
-#### index
-
-noqa
-
-<a id="kiipy.aerial.tx_helpers.MessageLog.log"></a>
-
-#### log
-
-noqa
-
 <a id="kiipy.aerial.tx_helpers.TxResponse"></a>
 
 ## TxResponse Objects

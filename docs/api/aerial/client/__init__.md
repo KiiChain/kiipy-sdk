@@ -48,18 +48,6 @@ class Validator()
 
 Validator.
 
-<a id="kiipy.aerial.client.__init__.Validator.address"></a>
-
-#### address
-
-the operators address
-
-<a id="kiipy.aerial.client.__init__.Validator.tokens"></a>
-
-#### tokens
-
-The total amount of tokens for the validator
-
 <a id="kiipy.aerial.client.__init__.Coin"></a>
 
 ## Coin Objects
