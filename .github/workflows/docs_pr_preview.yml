@@ -31,23 +31,23 @@ jobs:
           name: dist
           path: site
 
-  deploy:
-    name: Docs Ephemeral Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Download Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: site
-
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-          expires: 2d
-          projectId: fetch-docs-preview
-          # entryPoint: docs/
+#  deploy:
+#    name: Docs Ephemeral Deploy
+#    needs: build
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#
+#      - name: Download Artifact
+#        uses: actions/download-artifact@v3
+#        with:
+#          name: dist
+#          path: site
+#
+#      - uses: FirebaseExtended/action-hosting-deploy@v0
+#        with:
+#          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+#          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+#          expires: 2d
+#          projectId: fetch-docs-preview
+#          # entryPoint: docs/
