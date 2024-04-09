@@ -1,5 +1,5 @@
-name: Checks and Tests
-on: [pull_request, push]
+name: Pull Request
+on: pull_request
 
 jobs:
   code_quality_check:
