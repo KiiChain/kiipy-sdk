@@ -20,13 +20,13 @@
 2. Clone your fork of the repository:
 
    ``` shell
-   git clone git@github.com:<github username>/cosmpy.git
+   git clone git@github.com:<github username>/kiipy.git
    ```
 
-3. Define an `upstream` remote pointing back to the main CosmPy repository:
+3. Define an `upstream` remote pointing back to the main KiiPy repository:
 
    ``` shell
-   git remote add upstream https://github.com/fetchai/cosmpy.git
+   git remote add upstream https://github.com/KiiBlockchain/kiipy.git
    ```
 
 ## <a name="setup"></a> Setting up a New Development Environment
@@ -101,7 +101,7 @@ We use [`mkdocs`][mkdocs] and [`material-for-mkdocs`][material] for static docum
 
 ### <a name="api"></a>Updating API documentation
 
-If you've made changes to the core `cosmpy` package that affects the public API:
+If you've made changes to the core `kiipy` package that affects the public API:
 
 - ``` shell
    make generate-api-docs
@@ -251,4 +251,4 @@ For instructions on how to contribute to the project (e.g. creating Pull Request
 [poetry]: https://python-poetry.org
 [contributing guide]: https://github.com/fetchai/cosmpy/blob/main/CONTRIBUTING.md
 [release process]: https://github.com/fetchai/cosmpy/blob/main/scripts/RELEASE_PROCESS.md
-[repo]: https://github.com/fetchai/cosmpy
+[repo]: https://github.com/KiiBlockchain/kiipy
