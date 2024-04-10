@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.tx_helpers"></a>
+<a id="kiipy.aerial.tx_helpers"></a>
 
-# cosmpy.aerial.tx`_`helpers
+# kiipy.aerial.tx`_`helpers
 
 Transaction helpers.
 
-<a id="cosmpy.aerial.tx_helpers.MessageLog"></a>
+<a id="kiipy.aerial.tx_helpers.MessageLog"></a>
 
 ## MessageLog Objects
 
@@ -15,7 +15,7 @@ class MessageLog()
 
 Message Log.
 
-<a id="cosmpy.aerial.tx_helpers.TxResponse"></a>
+<a id="kiipy.aerial.tx_helpers.TxResponse"></a>
 
 ## TxResponse Objects
 
@@ -32,7 +32,7 @@ Transaction response.
 - `InsufficientFeesError`: Insufficient fees
 - `BroadcastError`: Broadcast Exception
 
-<a id="cosmpy.aerial.tx_helpers.TxResponse.is_successful"></a>
+<a id="kiipy.aerial.tx_helpers.TxResponse.is_successful"></a>
 
 #### is`_`successful
 
@@ -46,7 +46,7 @@ Check transaction is successful.
 
 transaction status
 
-<a id="cosmpy.aerial.tx_helpers.TxResponse.ensure_successful"></a>
+<a id="kiipy.aerial.tx_helpers.TxResponse.ensure_successful"></a>
 
 #### ensure`_`successful
 
@@ -62,7 +62,7 @@ Ensure transaction is successful.
 - `InsufficientFeesError`: Insufficient fees
 - `BroadcastError`: Broadcast Exception
 
-<a id="cosmpy.aerial.tx_helpers.SubmittedTx"></a>
+<a id="kiipy.aerial.tx_helpers.SubmittedTx"></a>
 
 ## SubmittedTx Objects
 
@@ -72,7 +72,7 @@ class SubmittedTx()
 
 Submitted transaction.
 
-<a id="cosmpy.aerial.tx_helpers.SubmittedTx.__init__"></a>
+<a id="kiipy.aerial.tx_helpers.SubmittedTx.__init__"></a>
 
 #### `__`init`__`
 
@@ -87,7 +87,7 @@ Init the Submitted transaction.
 - `client`: Ledger client
 - `tx_hash`: transaction hash
 
-<a id="cosmpy.aerial.tx_helpers.SubmittedTx.tx_hash"></a>
+<a id="kiipy.aerial.tx_helpers.SubmittedTx.tx_hash"></a>
 
 #### tx`_`hash
 
@@ -102,7 +102,7 @@ Get the transaction hash.
 
 transaction hash
 
-<a id="cosmpy.aerial.tx_helpers.SubmittedTx.response"></a>
+<a id="kiipy.aerial.tx_helpers.SubmittedTx.response"></a>
 
 #### response
 
@@ -117,7 +117,7 @@ Get the transaction response.
 
 response
 
-<a id="cosmpy.aerial.tx_helpers.SubmittedTx.contract_code_id"></a>
+<a id="kiipy.aerial.tx_helpers.SubmittedTx.contract_code_id"></a>
 
 #### contract`_`code`_`id
 
@@ -132,7 +132,7 @@ Get the contract code id.
 
 return contract code id if exist else None
 
-<a id="cosmpy.aerial.tx_helpers.SubmittedTx.contract_address"></a>
+<a id="kiipy.aerial.tx_helpers.SubmittedTx.contract_address"></a>
 
 #### contract`_`address
 
@@ -147,7 +147,7 @@ Get the contract address.
 
 return contract address if exist else None
 
-<a id="cosmpy.aerial.tx_helpers.SubmittedTx.wait_to_complete"></a>
+<a id="kiipy.aerial.tx_helpers.SubmittedTx.wait_to_complete"></a>
 
 #### wait`_`to`_`complete
 

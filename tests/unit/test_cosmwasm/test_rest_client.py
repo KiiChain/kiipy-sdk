@@ -24,9 +24,9 @@ import unittest
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy.common.utils import json_encode
-from cosmpy.cosmwasm.rest_client import CosmWasmRestClient
-from cosmpy.protos.cosmwasm.wasm.v1.query_pb2 import (
+from kiipy.common.utils import json_encode
+from kiipy.cosmwasm.rest_client import CosmWasmRestClient
+from kiipy.protos.cosmwasm.wasm.v1.query_pb2 import (
     QueryAllContractStateRequest,
     QueryAllContractStateResponse,
     QueryCodeRequest,

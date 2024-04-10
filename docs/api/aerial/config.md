@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.config"></a>
+<a id="kiipy.aerial.config"></a>
 
-# cosmpy.aerial.config
+# kiipy.aerial.config
 
 Network configurations.
 
-<a id="cosmpy.aerial.config.NetworkConfigError"></a>
+<a id="kiipy.aerial.config.NetworkConfigError"></a>
 
 ## NetworkConfigError Objects
 
@@ -18,7 +18,7 @@ Network config error.
 
 - `RuntimeError`: Runtime error
 
-<a id="cosmpy.aerial.config.NetworkConfig"></a>
+<a id="kiipy.aerial.config.NetworkConfig"></a>
 
 ## NetworkConfig Objects
 
@@ -34,7 +34,7 @@ Network configurations.
 - `NetworkConfigError`: Network config error
 - `RuntimeError`: Runtime error
 
-<a id="cosmpy.aerial.config.NetworkConfig.validate"></a>
+<a id="kiipy.aerial.config.NetworkConfig.validate"></a>
 
 #### validate
 
@@ -48,7 +48,7 @@ Validate the network configuration.
 
 - `NetworkConfigError`: Network config error
 
-<a id="cosmpy.aerial.config.NetworkConfig.fetchai_dorado_testnet"></a>
+<a id="kiipy.aerial.config.NetworkConfig.fetchai_dorado_testnet"></a>
 
 #### fetchai`_`dorado`_`testnet
 
@@ -63,7 +63,7 @@ Fetchai dorado testnet.
 
 Network configuration
 
-<a id="cosmpy.aerial.config.NetworkConfig.fetchai_alpha_testnet"></a>
+<a id="kiipy.aerial.config.NetworkConfig.fetchai_alpha_testnet"></a>
 
 #### fetchai`_`alpha`_`testnet
 
@@ -78,7 +78,7 @@ Get the fetchai alpha testnet.
 
 - `RuntimeError`: No alpha testnet available
 
-<a id="cosmpy.aerial.config.NetworkConfig.fetchai_beta_testnet"></a>
+<a id="kiipy.aerial.config.NetworkConfig.fetchai_beta_testnet"></a>
 
 #### fetchai`_`beta`_`testnet
 
@@ -93,7 +93,7 @@ Get the Fetchai beta testnet.
 
 - `RuntimeError`: No beta testnet available
 
-<a id="cosmpy.aerial.config.NetworkConfig.fetchai_stable_testnet"></a>
+<a id="kiipy.aerial.config.NetworkConfig.fetchai_stable_testnet"></a>
 
 #### fetchai`_`stable`_`testnet
 
@@ -108,7 +108,7 @@ Get the fetchai stable testnet.
 
 fetchai stable testnet. For now dorado is fetchai stable testnet.
 
-<a id="cosmpy.aerial.config.NetworkConfig.fetchai_mainnet"></a>
+<a id="kiipy.aerial.config.NetworkConfig.fetchai_mainnet"></a>
 
 #### fetchai`_`mainnet
 
@@ -123,7 +123,7 @@ Get the fetchai mainnet configuration.
 
 fetch mainnet configuration
 
-<a id="cosmpy.aerial.config.NetworkConfig.fetch_mainnet"></a>
+<a id="kiipy.aerial.config.NetworkConfig.fetch_mainnet"></a>
 
 #### fetch`_`mainnet
 
@@ -138,7 +138,7 @@ Get the fetch mainnet.
 
 fetch mainnet configurations
 
-<a id="cosmpy.aerial.config.NetworkConfig.latest_stable_testnet"></a>
+<a id="kiipy.aerial.config.NetworkConfig.latest_stable_testnet"></a>
 
 #### latest`_`stable`_`testnet
 

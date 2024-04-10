@@ -1,10 +1,10 @@
-<a id="cosmpy.mnemonic.__init__"></a>
+<a id="kiipy.mnemonic.__init__"></a>
 
-# cosmpy.mnemonic.`__`init`__`
+# kiipy.mnemonic.`__`init`__`
 
 Mnemonic implementation.
 
-<a id="cosmpy.mnemonic.__init__.split_hmac"></a>
+<a id="kiipy.mnemonic.__init__.split_hmac"></a>
 
 #### split`_`hmac
 
@@ -22,7 +22,7 @@ Split HMAC data into two halves.
 
 Tuple[bytes, bytes]
 
-<a id="cosmpy.mnemonic.__init__.validate_private_key"></a>
+<a id="kiipy.mnemonic.__init__.validate_private_key"></a>
 
 #### validate`_`private`_`key
 
@@ -40,7 +40,7 @@ Validate the private key.
 
 bool
 
-<a id="cosmpy.mnemonic.__init__.derive_master_key"></a>
+<a id="kiipy.mnemonic.__init__.derive_master_key"></a>
 
 #### derive`_`master`_`key
 
@@ -62,7 +62,7 @@ Derive the master key and chain code from the seed bytes.
 
 Tuple[bytes, bytes]
 
-<a id="cosmpy.mnemonic.__init__.parse_derivation_path"></a>
+<a id="kiipy.mnemonic.__init__.parse_derivation_path"></a>
 
 #### parse`_`derivation`_`path
 
@@ -84,7 +84,7 @@ Parse the derivation path in the form of m/44'/118'/0'/0/0 and return a list of 
 
 List[int]
 
-<a id="cosmpy.mnemonic.__init__.derive_child_key_from_index"></a>
+<a id="kiipy.mnemonic.__init__.derive_child_key_from_index"></a>
 
 #### derive`_`child`_`key`_`from`_`index
 
@@ -105,7 +105,7 @@ Derive a child key from the specified private key, chain code, and index.
 
 Tuple[bytes, bytes]
 
-<a id="cosmpy.mnemonic.__init__.derive_child_key"></a>
+<a id="kiipy.mnemonic.__init__.derive_child_key"></a>
 
 #### derive`_`child`_`key
 
@@ -126,7 +126,7 @@ Derive a child key from a master key and a derivation path.
 
 bytes The derived child key.
 
-<a id="cosmpy.mnemonic.__init__.validate_mnemonic_and_normalise"></a>
+<a id="kiipy.mnemonic.__init__.validate_mnemonic_and_normalise"></a>
 
 #### validate`_`mnemonic`_`and`_`normalise
 
@@ -148,7 +148,7 @@ Validate a mnemonic phrase.
 
 str The normalized mnemonic phrase.
 
-<a id="cosmpy.mnemonic.__init__.derive_seed_from_mnemonic"></a>
+<a id="kiipy.mnemonic.__init__.derive_seed_from_mnemonic"></a>
 
 #### derive`_`seed`_`from`_`mnemonic
 
@@ -168,7 +168,7 @@ Derive a seed from a mnemonic phrase.
 
 bytes The derived seed as bytes.
 
-<a id="cosmpy.mnemonic.__init__.derive_child_key_from_mnemonic"></a>
+<a id="kiipy.mnemonic.__init__.derive_child_key_from_mnemonic"></a>
 
 #### derive`_`child`_`key`_`from`_`mnemonic
 
@@ -190,7 +190,7 @@ Derive a child key from a mnemonic phrase and a derivation path.
 
 bytes The derived child key.
 
-<a id="cosmpy.mnemonic.__init__.entropy_to_mnemonic"></a>
+<a id="kiipy.mnemonic.__init__.entropy_to_mnemonic"></a>
 
 #### entropy`_`to`_`mnemonic
 
@@ -212,7 +212,7 @@ Convert entropy bytes to a mnemonic phrase.
 
 str The generated mnemonic phrase.
 
-<a id="cosmpy.mnemonic.__init__.generate_entropy"></a>
+<a id="kiipy.mnemonic.__init__.generate_entropy"></a>
 
 #### generate`_`entropy
 
@@ -230,7 +230,7 @@ Generate entropy bytes.
 
 bytes The generated entropy bytes.
 
-<a id="cosmpy.mnemonic.__init__.generate_mnemonic"></a>
+<a id="kiipy.mnemonic.__init__.generate_mnemonic"></a>
 
 #### generate`_`mnemonic
 

@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.client.distribution"></a>
+<a id="kiipy.aerial.client.distribution"></a>
 
-# cosmpy.aerial.client.distribution
+# kiipy.aerial.client.distribution
 
 Distribution.
 
-<a id="cosmpy.aerial.client.distribution.create_withdraw_delegator_reward"></a>
+<a id="kiipy.aerial.client.distribution.create_withdraw_delegator_reward"></a>
 
 #### create`_`withdraw`_`delegator`_`reward
 

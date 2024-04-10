@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.client.__init__"></a>
+<a id="kiipy.aerial.client.__init__"></a>
 
-# cosmpy.aerial.client.`__`init`__`
+# kiipy.aerial.client.`__`init`__`
 
 Client functionality.
 
-<a id="cosmpy.aerial.client.__init__.Account"></a>
+<a id="kiipy.aerial.client.__init__.Account"></a>
 
 ## Account Objects
 
@@ -15,7 +15,7 @@ class Account()
 
 Account.
 
-<a id="cosmpy.aerial.client.__init__.StakingPosition"></a>
+<a id="kiipy.aerial.client.__init__.StakingPosition"></a>
 
 ## StakingPosition Objects
 
@@ -26,7 +26,7 @@ class StakingPosition()
 
 Staking positions.
 
-<a id="cosmpy.aerial.client.__init__.UnbondingPositions"></a>
+<a id="kiipy.aerial.client.__init__.UnbondingPositions"></a>
 
 ## UnbondingPositions Objects
 
@@ -37,7 +37,7 @@ class UnbondingPositions()
 
 Unbonding positions.
 
-<a id="cosmpy.aerial.client.__init__.Validator"></a>
+<a id="kiipy.aerial.client.__init__.Validator"></a>
 
 ## Validator Objects
 
@@ -48,7 +48,7 @@ class Validator()
 
 Validator.
 
-<a id="cosmpy.aerial.client.__init__.Coin"></a>
+<a id="kiipy.aerial.client.__init__.Coin"></a>
 
 ## Coin Objects
 
@@ -59,7 +59,7 @@ class Coin()
 
 Coins.
 
-<a id="cosmpy.aerial.client.__init__.StakingSummary"></a>
+<a id="kiipy.aerial.client.__init__.StakingSummary"></a>
 
 ## StakingSummary Objects
 
@@ -70,7 +70,7 @@ class StakingSummary()
 
 Get the staking summary.
 
-<a id="cosmpy.aerial.client.__init__.StakingSummary.total_staked"></a>
+<a id="kiipy.aerial.client.__init__.StakingSummary.total_staked"></a>
 
 #### total`_`staked
 
@@ -81,7 +81,7 @@ def total_staked() -> int
 
 Get the total staked amount.
 
-<a id="cosmpy.aerial.client.__init__.StakingSummary.total_rewards"></a>
+<a id="kiipy.aerial.client.__init__.StakingSummary.total_rewards"></a>
 
 #### total`_`rewards
 
@@ -92,7 +92,7 @@ def total_rewards() -> int
 
 Get the total rewards.
 
-<a id="cosmpy.aerial.client.__init__.StakingSummary.total_unbonding"></a>
+<a id="kiipy.aerial.client.__init__.StakingSummary.total_unbonding"></a>
 
 #### total`_`unbonding
 
@@ -103,7 +103,7 @@ def total_unbonding() -> int
 
 total unbonding.
 
-<a id="cosmpy.aerial.client.__init__.Block"></a>
+<a id="kiipy.aerial.client.__init__.Block"></a>
 
 ## Block Objects
 
@@ -114,7 +114,7 @@ class Block()
 
 Block.
 
-<a id="cosmpy.aerial.client.__init__.Block.from_proto"></a>
+<a id="kiipy.aerial.client.__init__.Block.from_proto"></a>
 
 #### from`_`proto
 
@@ -133,7 +133,7 @@ Parse the block.
 
 parsed block as Block
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient"></a>
 
 ## LedgerClient Objects
 
@@ -143,7 +143,7 @@ class LedgerClient()
 
 Ledger client.
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.__init__"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.__init__"></a>
 
 #### `__`init`__`
 
@@ -161,7 +161,7 @@ Init ledger client.
 - `query_interval_secs`: int. optional interval int seconds
 - `query_timeout_secs`: int. optional interval int seconds
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.network_config"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.network_config"></a>
 
 #### network`_`config
 
@@ -176,7 +176,7 @@ Get the network config.
 
 network config
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.gas_strategy"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.gas_strategy"></a>
 
 #### gas`_`strategy
 
@@ -191,7 +191,7 @@ Get gas strategy.
 
 gas strategy
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.gas_strategy"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.gas_strategy"></a>
 
 #### gas`_`strategy
 
@@ -210,7 +210,7 @@ Set gas strategy.
 
 - `RuntimeError`: Invalid strategy must implement GasStrategy interface
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_account"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_account"></a>
 
 #### query`_`account
 
@@ -232,7 +232,7 @@ Query account.
 
 account details
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_params"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_params"></a>
 
 #### query`_`params
 
@@ -251,7 +251,7 @@ Query Prams.
 
 Query params
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_bank_balance"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_bank_balance"></a>
 
 #### query`_`bank`_`balance
 
@@ -270,7 +270,7 @@ Query bank balance.
 
 bank balance
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_bank_all_balances"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_bank_all_balances"></a>
 
 #### query`_`bank`_`all`_`balances
 
@@ -288,7 +288,7 @@ Query bank all balances.
 
 bank all balances
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.send_tokens"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.send_tokens"></a>
 
 #### send`_`tokens
 
@@ -316,7 +316,7 @@ Send tokens.
 
 prepare and broadcast the transaction and transaction details
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_validators"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_validators"></a>
 
 #### query`_`validators
 
@@ -335,7 +335,7 @@ Query validators.
 
 List of validators
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_staking_summary"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_staking_summary"></a>
 
 #### query`_`staking`_`summary
 
@@ -353,7 +353,7 @@ Query staking summary.
 
 staking summary
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.delegate_tokens"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.delegate_tokens"></a>
 
 #### delegate`_`tokens
 
@@ -379,7 +379,7 @@ Delegate tokens.
 
 prepare and broadcast the transaction and transaction details
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.redelegate_tokens"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.redelegate_tokens"></a>
 
 #### redelegate`_`tokens
 
@@ -407,7 +407,7 @@ Redelegate tokens.
 
 prepare and broadcast the transaction and transaction details
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.undelegate_tokens"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.undelegate_tokens"></a>
 
 #### undelegate`_`tokens
 
@@ -433,7 +433,7 @@ Undelegate tokens.
 
 prepare and broadcast the transaction and transaction details
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.claim_rewards"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.claim_rewards"></a>
 
 #### claim`_`rewards
 
@@ -457,7 +457,7 @@ claim rewards.
 
 prepare and broadcast the transaction and transaction details
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.estimate_gas_for_tx"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.estimate_gas_for_tx"></a>
 
 #### estimate`_`gas`_`for`_`tx
 
@@ -475,7 +475,7 @@ Estimate gas for transaction.
 
 Estimated gas for transaction
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.estimate_fee_from_gas"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.estimate_fee_from_gas"></a>
 
 #### estimate`_`fee`_`from`_`gas
 
@@ -493,7 +493,7 @@ Estimate fee from gas.
 
 Estimated fee for transaction
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.estimate_gas_and_fee_for_tx"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.estimate_gas_and_fee_for_tx"></a>
 
 #### estimate`_`gas`_`and`_`fee`_`for`_`tx
 
@@ -511,7 +511,7 @@ Estimate gas and fee for transaction.
 
 estimate gas, fee for transaction
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.wait_for_query_tx"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.wait_for_query_tx"></a>
 
 #### wait`_`for`_`query`_`tx
 
@@ -537,7 +537,7 @@ Wait for query transaction.
 
 transaction response
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_tx"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_tx"></a>
 
 #### query`_`tx
 
@@ -560,7 +560,7 @@ query transaction.
 
 query response
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.simulate_tx"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.simulate_tx"></a>
 
 #### simulate`_`tx
 
@@ -582,7 +582,7 @@ simulate transaction.
 
 gas used in transaction
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.broadcast_tx"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.broadcast_tx"></a>
 
 #### broadcast`_`tx
 
@@ -600,7 +600,7 @@ Broadcast transaction.
 
 Submitted transaction
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_latest_block"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_latest_block"></a>
 
 #### query`_`latest`_`block
 
@@ -614,7 +614,7 @@ Query the latest block.
 
 latest block
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_block"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_block"></a>
 
 #### query`_`block
 
@@ -632,7 +632,7 @@ Query the block.
 
 block
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_height"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_height"></a>
 
 #### query`_`height
 
@@ -646,7 +646,7 @@ Query the latest block height.
 
 latest block height
 
-<a id="cosmpy.aerial.client.__init__.LedgerClient.query_chain_id"></a>
+<a id="kiipy.aerial.client.__init__.LedgerClient.query_chain_id"></a>
 
 #### query`_`chain`_`id
 

@@ -23,9 +23,9 @@ import unittest
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy.common.utils import json_encode
-from cosmpy.mint.rest_client import MintRestClient
-from cosmpy.protos.cosmos.mint.v1beta1.query_pb2 import (
+from kiipy.common.utils import json_encode
+from kiipy.mint.rest_client import MintRestClient
+from kiipy.protos.cosmos.mint.v1beta1.query_pb2 import (
     QueryAnnualProvisionsResponse,
     QueryInflationResponse,
     QueryParamsResponse,

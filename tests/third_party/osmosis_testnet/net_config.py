@@ -18,9 +18,9 @@
 # ------------------------------------------------------------------------------
 
 """Osmosis network config."""
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.aerial.wallet import LocalWallet
+from kiipy.aerial.client import LedgerClient
+from kiipy.aerial.config import NetworkConfig
+from kiipy.aerial.wallet import LocalWallet
 
 
 # Network config

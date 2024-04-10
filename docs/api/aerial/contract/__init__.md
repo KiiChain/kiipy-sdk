@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.contract.__init__"></a>
+<a id="kiipy.aerial.contract.__init__"></a>
 
-# cosmpy.aerial.contract.`__`init`__`
+# kiipy.aerial.contract.`__`init`__`
 
 cosmwasm contract functionality.
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract"></a>
 
 ## LedgerContract Objects
 
@@ -14,7 +14,7 @@ class LedgerContract(UserString)
 
 Ledger contract.
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.__init__"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.__init__"></a>
 
 #### `__`init`__`
 
@@ -38,7 +38,7 @@ Initialize the Ledger contract.
 - `schema_path`: path to contract schema, defaults to None
 - `code_id`: optional int. code id of the contract stored
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.path"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.path"></a>
 
 #### path
 
@@ -53,7 +53,7 @@ Get contract path.
 
 contract path
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.digest"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.digest"></a>
 
 #### digest
 
@@ -68,7 +68,7 @@ Get the contract digest.
 
 contract digest
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.code_id"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.code_id"></a>
 
 #### code`_`id
 
@@ -83,7 +83,7 @@ Get the code id.
 
 code id
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.address"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.address"></a>
 
 #### address
 
@@ -98,7 +98,7 @@ Get the contract address.
 
 contract address
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.store"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.store"></a>
 
 #### store
 
@@ -124,7 +124,7 @@ Store the contract.
 
 code id
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.instantiate"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.instantiate"></a>
 
 #### instantiate
 
@@ -156,7 +156,7 @@ Instantiate the contract.
 
 contract address
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.upgrade"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.upgrade"></a>
 
 #### upgrade
 
@@ -180,7 +180,7 @@ Store new contract code and migrate the current contract address.
 
 transaction details broadcast
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.migrate"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.migrate"></a>
 
 #### migrate
 
@@ -204,7 +204,7 @@ Migrate the current contract address to new code id.
 
 transaction details broadcast
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.update_admin"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.update_admin"></a>
 
 #### update`_`admin
 
@@ -226,7 +226,7 @@ Update/clear the admin of the contract.
 
 transaction details broadcast
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.deploy"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.deploy"></a>
 
 #### deploy
 
@@ -256,7 +256,7 @@ Deploy the contract.
 
 instantiate contract details
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.execute"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.execute"></a>
 
 #### execute
 
@@ -284,7 +284,7 @@ execute the contract.
 
 transaction details broadcast
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.query"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.query"></a>
 
 #### query
 
@@ -306,7 +306,7 @@ Query on contract.
 
 query result
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.data"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.data"></a>
 
 #### data
 
@@ -321,7 +321,7 @@ Get the contract address.
 
 contract address
 
-<a id="cosmpy.aerial.contract.__init__.LedgerContract.__json__"></a>
+<a id="kiipy.aerial.contract.__init__.LedgerContract.__json__"></a>
 
 #### `__`json`__`
 

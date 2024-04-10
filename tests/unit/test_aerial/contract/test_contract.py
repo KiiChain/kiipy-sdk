@@ -20,9 +20,9 @@
 
 from unittest.mock import Mock
 
-from cosmpy.aerial.contract import LedgerContract
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.common.utils import json_encode
+from kiipy.aerial.contract import LedgerContract
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.common.utils import json_encode
 
 
 def test_contract_behaves_like_address_string():

@@ -22,8 +22,8 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy.common.utils import json_encode
-from cosmpy.protos.cosmos.base.tendermint.v1beta1.query_pb2 import (
+from kiipy.common.utils import json_encode
+from kiipy.protos.cosmos.base.tendermint.v1beta1.query_pb2 import (
     GetBlockByHeightRequest,
     GetBlockByHeightResponse,
     GetLatestBlockRequest,
@@ -37,7 +37,7 @@ from cosmpy.protos.cosmos.base.tendermint.v1beta1.query_pb2 import (
     GetValidatorSetByHeightRequest,
     GetValidatorSetByHeightResponse,
 )
-from cosmpy.tendermint.rest_client import CosmosBaseTendermintRestClient
+from kiipy.tendermint.rest_client import CosmosBaseTendermintRestClient
 
 from tests.helpers import MockRestClient
 
