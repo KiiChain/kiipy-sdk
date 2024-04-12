@@ -293,12 +293,13 @@ bank all balances
 #### send`_`tokens
 
 ```python
-def send_tokens(destination: Address,
-                amount: int,
-                denom: str,
-                sender: Wallet,
-                memo: Optional[str] = None,
-                gas_limit: Optional[int] = None) -> SubmittedTx
+def send_tokens(
+        destination: Address,
+        amount: int,
+        denom: str,
+        sender: Wallet,
+        memo: Optional[str] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT) -> SubmittedTx
 ```
 
 Send tokens.
@@ -358,11 +359,12 @@ staking summary
 #### delegate`_`tokens
 
 ```python
-def delegate_tokens(validator: Address,
-                    amount: int,
-                    sender: Wallet,
-                    memo: Optional[str] = None,
-                    gas_limit: Optional[int] = None) -> SubmittedTx
+def delegate_tokens(
+        validator: Address,
+        amount: int,
+        sender: Wallet,
+        memo: Optional[str] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT) -> SubmittedTx
 ```
 
 Delegate tokens.
@@ -384,12 +386,13 @@ prepare and broadcast the transaction and transaction details
 #### redelegate`_`tokens
 
 ```python
-def redelegate_tokens(current_validator: Address,
-                      next_validator: Address,
-                      amount: int,
-                      sender: Wallet,
-                      memo: Optional[str] = None,
-                      gas_limit: Optional[int] = None) -> SubmittedTx
+def redelegate_tokens(
+        current_validator: Address,
+        next_validator: Address,
+        amount: int,
+        sender: Wallet,
+        memo: Optional[str] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT) -> SubmittedTx
 ```
 
 Redelegate tokens.
@@ -412,11 +415,12 @@ prepare and broadcast the transaction and transaction details
 #### undelegate`_`tokens
 
 ```python
-def undelegate_tokens(validator: Address,
-                      amount: int,
-                      sender: Wallet,
-                      memo: Optional[str] = None,
-                      gas_limit: Optional[int] = None) -> SubmittedTx
+def undelegate_tokens(
+        validator: Address,
+        amount: int,
+        sender: Wallet,
+        memo: Optional[str] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT) -> SubmittedTx
 ```
 
 Undelegate tokens.
@@ -438,10 +442,11 @@ prepare and broadcast the transaction and transaction details
 #### claim`_`rewards
 
 ```python
-def claim_rewards(validator: Address,
-                  sender: Wallet,
-                  memo: Optional[str] = None,
-                  gas_limit: Optional[int] = None) -> SubmittedTx
+def claim_rewards(
+        validator: Address,
+        sender: Wallet,
+        memo: Optional[str] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT) -> SubmittedTx
 ```
 
 claim rewards.
