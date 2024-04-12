@@ -113,7 +113,9 @@ from kiipy.tx.rest_client import TxRestClient
 DEFAULT_QUERY_TIMEOUT_SECS = 15
 DEFAULT_QUERY_INTERVAL_SECS = 2
 DEFAULT_TX_GAS_LIMIT = 2000000
-COSMOS_SDK_DEC_COIN_PRECISION = 10**18 # TODO: Revisit this, based on discussion with Matt, this should be 10^6
+COSMOS_SDK_DEC_COIN_PRECISION = (
+    10**18
+)  # TODO: Revisit this, based on discussion with Matt, this should be 10^6
 
 
 @dataclass
