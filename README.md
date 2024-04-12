@@ -60,7 +60,7 @@ The full documentation can be found [here](https://docs.fetch.ai/CosmPy/).
 
 ## Examples
 
-Under the `examples` directory, you can find examples of basic ledger interactions using `cosmpy`, such as transferring tokens, staking, deploying and interacting with a smart contract, and performing atomic swaps.
+Under the `examples` directory, you can find examples of basic ledger interactions using `kiipy`, such as transferring tokens, staking, and deploying.
 
 ## Contributing
 

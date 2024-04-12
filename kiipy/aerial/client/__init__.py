@@ -708,7 +708,7 @@ class LedgerClient:
         for event in tx_response.events:
             event_data = events.get(event.type, {})
             for attribute in event.attributes:
-                event_data[attribute.key.decode()] = attribute.value.decode()
+                event_data[attribute.key] = attribute.value
             events[event.type] = event_data
 
         timestamp = None
