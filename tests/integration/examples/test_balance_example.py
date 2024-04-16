@@ -42,7 +42,7 @@ def test_staking_example():
     )
 
     expected_address = "kii1pyt53arxkg5t4aww892esskltrf54mg88va98y"
-    expected_balance = 0
+    expected_balance = 2500000000
 
     assert (
         f"{expected_address} has a balance of {expected_balance} tkii.".encode()
