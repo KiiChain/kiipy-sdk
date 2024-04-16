@@ -19,7 +19,6 @@
 #
 # ------------------------------------------------------------------------------
 from kiipy.aerial.client import LedgerClient, NetworkConfig
-from kiipy.aerial.wallet import LocalWallet
 
 
 def main():
@@ -27,13 +26,13 @@ def main():
     # Connecting to the Kii testnet
     ledger_client = LedgerClient(NetworkConfig.kii_testnet())
 
-    alice = LocalWallet.generate(prefix="kii")
+    wallet_address = "kii1pyt53arxkg5t4aww892esskltrf54mg88va98y"
 
     # Get balances, we expect 0 balance since the wallet is newly-created
-    print(f"Getting wallet balances for {alice.address()}...")
+    print(f"Getting wallet balances for {wallet_address}...")
     denom = "tkii"
-    balance = ledger_client.query_bank_balance(alice.address(), denom=denom)
-    print(f"{alice.address()} has a balance of {balance}{denom}.")
+    balance = ledger_client.query_bank_balance(wallet_address, denom=denom)
+    print(f"{wallet_address} has a balance of {balance} {denom}.")
 
 
 if __name__ == "__main__":
