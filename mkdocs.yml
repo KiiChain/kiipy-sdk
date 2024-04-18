@@ -1,11 +1,11 @@
-site_name: CosmPy
-site_url: https://docs.fetch.ai/cosmpy
-site_description: Everything you need to know about CosmPy.
-repo_url: https://github.com/fetchai/cosmpy
-repo_name: fetchai/cosmpy
+site_name: KiiPy
+site_url: https://docs.kiiglobal.io/kiipy
+site_description: Everything you need to know about KiiPy.
+repo_url: https://github.com/KiiBlockchain/kiipy
+repo_name: KiiBlockchain/kiipy
 edit_uri: ""
-site_author: developer@fetch.ai
-copyright: Copyright &copy; 2018 - 2023 Fetch.ai # Copyright notice in footer
+site_author: developer@kiiglobal.io
+copyright: Copyright &copy; 2024 Kii Global # Copyright notice in footer
 
 strict: true
 

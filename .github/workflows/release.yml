@@ -1,4 +1,4 @@
-name: Check and realese cosmpy
+name: Check and release kiipy
 # runs do release on main branch updated
 # script checks for current package version and the latest tag on github
 # if package version is newer it build, upload, tag and make a release page on github
