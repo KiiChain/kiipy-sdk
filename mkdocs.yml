@@ -63,8 +63,8 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-  logo: assets/images/logo.png  # Set Fetch Logo top left
-  favicon: assets/images/favicon.ico  # Set Fetch favicon
+  logo: assets/images/logo.png  # Set Logo top left
+  favicon: assets/images/favicon.ico  # Set favicon
   icon:
     repo: fontawesome/brands/github
   features:
@@ -106,23 +106,23 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/twitter
-      link: https://bit.ly/3oDuI3f
-      name: fetch.ai on twitter
+      link: https://twitter.com/KiiGlobal_
+      name: kii global on twitter
     - icon: fontawesome/brands/telegram
-      link: https://t.me/fetch_ai
-      name: fetch.ai on telegram
+      link: https://t.me/kiiglobal
+      name: kii global on telegram
     - icon: fontawesome/brands/discord
-      link: https://bit.ly/3ra5uMI
-      name: fetch.ai on discord
+      link: https://discord.com/invite/fUcfeYYtVF
+      name: kii global on discord
     - icon: fontawesome/brands/github
-      link: https://bit.ly/3AFCWxl
-      name: fetch.ai on github
-    - icon: fontawesome/brands/reddit
-      link: https://bit.ly/30zS1Tg
-      name: fetch.ai on reddit
+      link: https://github.com/KiiBlockchain
+      name: kii global on github
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/kiiglobal_/
+      name: kii global on instagram
     - icon: fontawesome/brands/youtube
-      link: https://bit.ly/3DxFazs
-      name: fetch.ai on youtube
+      link: https://www.youtube.com/@kiiglobal_
+      name: kii global on youtube
     - icon: fontawesome/brands/linkedin
-      link: https://bit.ly/3kNO70p
-      name: fetch.ai on linkedin
+      link: https://www.linkedin.com/company/kiiglobal/
+      name: kii global on linkedin

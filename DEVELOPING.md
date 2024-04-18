@@ -10,8 +10,6 @@
   - [Tests](#tests)
   - [Miscellaneous checks](#misc)
 - [Generating python types from Cosmos SDK protobuf schemas](#protobuf)
-- [Setting up a local Fetchai node](#localnode)
-- [Running a local Fetchai node in docker](#dockernode)
 - [Contributing](#contributing)
 
 ## <a name="get"></a> Getting the Source
