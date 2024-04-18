@@ -1,10 +1,10 @@
-COSMOS_SDK_URL := https://github.com/fetchai/cosmos-sdk
-COSMOS_SDK_VERSION := v0.18.0
+COSMOS_SDK_BUF_URL := buf.build/cosmos/cosmos-sdk
+COSMOS_SDK_VERSION := v0.47.0
 COSMOS_SDK_DIR := build/cosmos-sdk-proto-schema
 
 WASMD_URL := https://github.com/CosmWasm/wasmd
 WASMD_VERSION := v0.27.0
-WASMD_DIR := build/wasm-proto-shema
+WASMD_DIR := build/wasm-proto-schema
 
 IBCGO_URL := https://github.com/cosmos/ibc-go
 IBCGO_VERSION := v2.2.0
@@ -263,7 +263,7 @@ generate_proto_types: $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR)
 	python -m grpc_tools.protoc --proto_path=$(WASMD_DIR)/proto --proto_path=$(WASMD_DIR)/third_party/proto  --python_out=$(KIIPY_PROTOS_DIR) --grpc_python_out=$(KIIPY_PROTOS_DIR) $(shell find $(WASMD_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
 	python -m grpc_tools.protoc --proto_path=$(IBCGO_DIR)/proto --proto_path=$(IBCGO_DIR)/third_party/proto  --python_out=$(KIIPY_PROTOS_DIR) --grpc_python_out=$(KIIPY_PROTOS_DIR) $(shell find $(IBCGO_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
 # ensure cosmos-sdk is last as previous modules may have duplicated proto models which are now outdated
-	python -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR)/proto --proto_path=$(COSMOS_SDK_DIR)/third_party/proto  --python_out=$(KIIPY_PROTOS_DIR) --grpc_python_out=$(KIIPY_PROTOS_DIR) $(shell find $(COSMOS_SDK_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
+	python -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR) --python_out=$(KIIPY_PROTOS_DIR) --grpc_python_out=$(KIIPY_PROTOS_DIR) $(shell find $(COSMOS_SDK_DIR) -type f -name *.proto)
 
 fetch_proto_schema_source: $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR)
 
@@ -285,8 +285,7 @@ $(GENERATED_DIRS): $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR)
 
 $(COSMOS_SDK_DIR): Makefile
 	rm -rfv $(COSMOS_SDK_DIR)
-	git clone --branch $(COSMOS_SDK_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(COSMOS_SDK_URL) $(COSMOS_SDK_DIR)
-	cd $(COSMOS_SDK_DIR) && git checkout $(COSMOS_SDK_VERSION) -- $(COSMOS_PROTO_RELATIVE_DIRS)
+	buf export $(COSMOS_SDK_BUF_URL):$(COSMOS_SDK_VERSION) --output $(COSMOS_SDK_DIR)
 
 $(WASMD_DIR): Makefile
 	rm -rfv $(WASMD_DIR)

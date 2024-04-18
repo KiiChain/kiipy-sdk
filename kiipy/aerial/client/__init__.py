@@ -112,7 +112,10 @@ from kiipy.tx.rest_client import TxRestClient
 
 DEFAULT_QUERY_TIMEOUT_SECS = 15
 DEFAULT_QUERY_INTERVAL_SECS = 2
-COSMOS_SDK_DEC_COIN_PRECISION = 10**18
+DEFAULT_TX_GAS_LIMIT = 2000000
+COSMOS_SDK_DEC_COIN_PRECISION = (
+    10**18
+)  # TODO: Revisit this, based on discussion with Matt, this should be 10^6
 
 
 @dataclass
@@ -367,7 +370,7 @@ class LedgerClient:
         denom: str,
         sender: Wallet,
         memo: Optional[str] = None,
-        gas_limit: Optional[int] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT,
     ) -> SubmittedTx:
         """Send tokens.
 
@@ -486,7 +489,7 @@ class LedgerClient:
         amount: int,
         sender: Wallet,
         memo: Optional[str] = None,
-        gas_limit: Optional[int] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT,
     ) -> SubmittedTx:
         """Delegate tokens.
 
@@ -518,7 +521,7 @@ class LedgerClient:
         amount: int,
         sender: Wallet,
         memo: Optional[str] = None,
-        gas_limit: Optional[int] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT,
     ) -> SubmittedTx:
         """Redelegate tokens.
 
@@ -551,7 +554,7 @@ class LedgerClient:
         amount: int,
         sender: Wallet,
         memo: Optional[str] = None,
-        gas_limit: Optional[int] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT,
     ) -> SubmittedTx:
         """Undelegate tokens.
 
@@ -581,7 +584,7 @@ class LedgerClient:
         validator: Address,
         sender: Wallet,
         memo: Optional[str] = None,
-        gas_limit: Optional[int] = None,
+        gas_limit: Optional[int] = DEFAULT_TX_GAS_LIMIT,
     ) -> SubmittedTx:
         """claim rewards.
 
@@ -708,7 +711,7 @@ class LedgerClient:
         for event in tx_response.events:
             event_data = events.get(event.type, {})
             for attribute in event.attributes:
-                event_data[attribute.key.decode()] = attribute.value.decode()
+                event_data[attribute.key] = attribute.value
             events[event.type] = event_data
 
         timestamp = None

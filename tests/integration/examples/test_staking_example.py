@@ -30,6 +30,7 @@ from tests.integration.test_contract import MAX_FLAKY_RERUNS, RERUNS_DELAY
 ROOT_DIR = Path(__file__).parent.parent.parent.parent
 
 
+@pytest.mark.skip(reason="fetchai testnet conflicts with upgraded cosmos sdk version")
 @pytest.mark.flaky(reruns=MAX_FLAKY_RERUNS, reruns_delay=RERUNS_DELAY)
 def test_staking_example():
     """Test examples/aerial_staking.py"""

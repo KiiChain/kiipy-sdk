@@ -32,11 +32,6 @@ class ABCIApplicationStub(object):
                 request_serializer=tendermint_dot_abci_dot_types__pb2.RequestInfo.SerializeToString,
                 response_deserializer=tendermint_dot_abci_dot_types__pb2.ResponseInfo.FromString,
                 )
-        self.SetOption = channel.unary_unary(
-                '/tendermint.abci.ABCIApplication/SetOption',
-                request_serializer=tendermint_dot_abci_dot_types__pb2.RequestSetOption.SerializeToString,
-                response_deserializer=tendermint_dot_abci_dot_types__pb2.ResponseSetOption.FromString,
-                )
         self.DeliverTx = channel.unary_unary(
                 '/tendermint.abci.ABCIApplication/DeliverTx',
                 request_serializer=tendermint_dot_abci_dot_types__pb2.RequestDeliverTx.SerializeToString,
@@ -92,6 +87,16 @@ class ABCIApplicationStub(object):
                 request_serializer=tendermint_dot_abci_dot_types__pb2.RequestApplySnapshotChunk.SerializeToString,
                 response_deserializer=tendermint_dot_abci_dot_types__pb2.ResponseApplySnapshotChunk.FromString,
                 )
+        self.PrepareProposal = channel.unary_unary(
+                '/tendermint.abci.ABCIApplication/PrepareProposal',
+                request_serializer=tendermint_dot_abci_dot_types__pb2.RequestPrepareProposal.SerializeToString,
+                response_deserializer=tendermint_dot_abci_dot_types__pb2.ResponsePrepareProposal.FromString,
+                )
+        self.ProcessProposal = channel.unary_unary(
+                '/tendermint.abci.ABCIApplication/ProcessProposal',
+                request_serializer=tendermint_dot_abci_dot_types__pb2.RequestProcessProposal.SerializeToString,
+                response_deserializer=tendermint_dot_abci_dot_types__pb2.ResponseProcessProposal.FromString,
+                )
 
 
 class ABCIApplicationServicer(object):
@@ -113,12 +118,6 @@ class ABCIApplicationServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Info(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SetOption(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -190,6 +189,18 @@ class ABCIApplicationServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PrepareProposal(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ProcessProposal(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ABCIApplicationServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -207,11 +218,6 @@ def add_ABCIApplicationServicer_to_server(servicer, server):
                     servicer.Info,
                     request_deserializer=tendermint_dot_abci_dot_types__pb2.RequestInfo.FromString,
                     response_serializer=tendermint_dot_abci_dot_types__pb2.ResponseInfo.SerializeToString,
-            ),
-            'SetOption': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetOption,
-                    request_deserializer=tendermint_dot_abci_dot_types__pb2.RequestSetOption.FromString,
-                    response_serializer=tendermint_dot_abci_dot_types__pb2.ResponseSetOption.SerializeToString,
             ),
             'DeliverTx': grpc.unary_unary_rpc_method_handler(
                     servicer.DeliverTx,
@@ -267,6 +273,16 @@ def add_ABCIApplicationServicer_to_server(servicer, server):
                     servicer.ApplySnapshotChunk,
                     request_deserializer=tendermint_dot_abci_dot_types__pb2.RequestApplySnapshotChunk.FromString,
                     response_serializer=tendermint_dot_abci_dot_types__pb2.ResponseApplySnapshotChunk.SerializeToString,
+            ),
+            'PrepareProposal': grpc.unary_unary_rpc_method_handler(
+                    servicer.PrepareProposal,
+                    request_deserializer=tendermint_dot_abci_dot_types__pb2.RequestPrepareProposal.FromString,
+                    response_serializer=tendermint_dot_abci_dot_types__pb2.ResponsePrepareProposal.SerializeToString,
+            ),
+            'ProcessProposal': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProcessProposal,
+                    request_deserializer=tendermint_dot_abci_dot_types__pb2.RequestProcessProposal.FromString,
+                    response_serializer=tendermint_dot_abci_dot_types__pb2.ResponseProcessProposal.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -329,23 +345,6 @@ class ABCIApplication(object):
         return grpc.experimental.unary_unary(request, target, '/tendermint.abci.ABCIApplication/Info',
             tendermint_dot_abci_dot_types__pb2.RequestInfo.SerializeToString,
             tendermint_dot_abci_dot_types__pb2.ResponseInfo.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SetOption(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/tendermint.abci.ABCIApplication/SetOption',
-            tendermint_dot_abci_dot_types__pb2.RequestSetOption.SerializeToString,
-            tendermint_dot_abci_dot_types__pb2.ResponseSetOption.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -533,5 +532,39 @@ class ABCIApplication(object):
         return grpc.experimental.unary_unary(request, target, '/tendermint.abci.ABCIApplication/ApplySnapshotChunk',
             tendermint_dot_abci_dot_types__pb2.RequestApplySnapshotChunk.SerializeToString,
             tendermint_dot_abci_dot_types__pb2.ResponseApplySnapshotChunk.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PrepareProposal(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/tendermint.abci.ABCIApplication/PrepareProposal',
+            tendermint_dot_abci_dot_types__pb2.RequestPrepareProposal.SerializeToString,
+            tendermint_dot_abci_dot_types__pb2.ResponsePrepareProposal.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ProcessProposal(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/tendermint.abci.ABCIApplication/ProcessProposal',
+            tendermint_dot_abci_dot_types__pb2.RequestProcessProposal.SerializeToString,
+            tendermint_dot_abci_dot_types__pb2.ResponseProcessProposal.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

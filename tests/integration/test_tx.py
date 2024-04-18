@@ -58,6 +58,9 @@ class TestTx:
         return wallet2
 
     @pytest.mark.integration
+    @pytest.mark.skip(
+        reason="fetchai testnet conflicts with upgraded cosmos sdk version"
+    )
     @pytest.mark.flaky(reruns=MAX_FLAKY_RERUNS, reruns_delay=RERUNS_DELAY)
     def test_faucet_transaction_balance(self):
         """Test faucet claims, tx settled, balance check."""

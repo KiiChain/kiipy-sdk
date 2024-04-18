@@ -4,9 +4,8 @@
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -18,18 +17,10 @@ from ibc.core.client.v1 import client_pb2 as ibc_dot_core_dot_client_dot_v1_dot_
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-ibc/lightclients/localhost/v1/localhost.proto\x12\x1dibc.lightclients.localhost.v1\x1a\x14gogoproto/gogo.proto\x1a\x1fibc/core/client/v1/client.proto\"l\n\x0b\x43lientState\x12%\n\x08\x63hain_id\x18\x01 \x01(\tB\x13\xf2\xde\x1f\x0fyaml:\"chain_id\"\x12\x30\n\x06height\x18\x02 \x01(\x0b\x32\x1a.ibc.core.client.v1.HeightB\x04\xc8\xde\x1f\x00:\x04\x88\xa0\x1f\x00\x42\x46ZDgithub.com/cosmos/ibc-go/v2/modules/light-clients/09-localhost/typesb\x06proto3')
 
-
-
-_CLIENTSTATE = DESCRIPTOR.message_types_by_name['ClientState']
-ClientState = _reflection.GeneratedProtocolMessageType('ClientState', (_message.Message,), {
-  'DESCRIPTOR' : _CLIENTSTATE,
-  '__module__' : 'ibc.lightclients.localhost.v1.localhost_pb2'
-  # @@protoc_insertion_point(class_scope:ibc.lightclients.localhost.v1.ClientState)
-  })
-_sym_db.RegisterMessage(ClientState)
-
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'ibc.lightclients.localhost.v1.localhost_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'ZDgithub.com/cosmos/ibc-go/v2/modules/light-clients/09-localhost/types'
   _CLIENTSTATE.fields_by_name['chain_id']._options = None
@@ -38,6 +29,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CLIENTSTATE.fields_by_name['height']._serialized_options = b'\310\336\037\000'
   _CLIENTSTATE._options = None
   _CLIENTSTATE._serialized_options = b'\210\240\037\000'
-  _CLIENTSTATE._serialized_start=135
-  _CLIENTSTATE._serialized_end=243
+  _globals['_CLIENTSTATE']._serialized_start=135
+  _globals['_CLIENTSTATE']._serialized_end=243
 # @@protoc_insertion_point(module_scope)

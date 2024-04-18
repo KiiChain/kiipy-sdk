@@ -48,6 +48,21 @@ Validate the network configuration.
 
 - `NetworkConfigError`: Network config error
 
+<a id="kiipy.aerial.config.NetworkConfig.kii_testnet"></a>
+
+#### kii`_`testnet
+
+```python
+@classmethod
+def kii_testnet(cls) -> "NetworkConfig"
+```
+
+Kii testnet.
+
+**Returns**:
+
+Network configuration
+
 <a id="kiipy.aerial.config.NetworkConfig.fetchai_dorado_testnet"></a>
 
 #### fetchai`_`dorado`_`testnet

@@ -77,6 +77,21 @@ class NetworkConfig:
             )
 
     @classmethod
+    def kii_testnet(cls) -> "NetworkConfig":
+        """Kii testnet.
+
+        :return: Network configuration
+        """
+        return NetworkConfig(
+            chain_id="kiiventador",
+            url="rest+https://a.testnet.kiivalidator.com/",
+            fee_minimum_gas_price=0,
+            fee_denomination="tkii",
+            staking_denomination="tkii",
+            faucet_url=None,
+        )
+
+    @classmethod
     def fetchai_dorado_testnet(cls) -> "NetworkConfig":
         """Fetchai dorado testnet.
 
