@@ -79,7 +79,7 @@ def create_wallet(name: str) -> None:
     """Create a wallet. Keys will be saved at keys/NAME.pub and keys/NAME.priv."""
     print(f"Creating new wallet '{name}'...")
     wallet = LocalWallet.generate(prefix="kii")
-    print(f"Created {name} with address {wallet.address().data}.")
+    print(f"Created {name} with address {wallet.address().data}")
 
     _save_key(
         PUBKEY_FILE.replace("NAME", name), "public key", wallet.public_key().public_key
