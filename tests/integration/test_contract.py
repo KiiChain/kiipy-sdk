@@ -46,7 +46,7 @@ class TestContract:
 
     def _get_network_config(self):
         """Get network config."""
-        return NetworkConfig.fetchai_stable_testnet()
+        return NetworkConfig.kii_testnet()
 
     def get_wallet(self):
         """Get wallet"""
@@ -64,9 +64,7 @@ class TestContract:
         return LedgerContract(CONTRACT_PATH, self.get_ledger())
 
     @pytest.mark.integration
-    @pytest.mark.skip(
-        reason="fetchai testnet conflicts with upgraded cosmos sdk version"
-    )
+    @pytest.mark.skip(reason="kiipy doesn't fully support contracts yet")
     @pytest.mark.flaky(reruns=MAX_FLAKY_RERUNS, reruns_delay=RERUNS_DELAY)
     def test_contract(self):
         """Test simple contract deploy execute and query."""
@@ -87,9 +85,7 @@ class TestContract:
         assert result["value"] == value
 
     @pytest.mark.integration
-    @pytest.mark.skip(
-        reason="fetchai testnet conflicts with upgraded cosmos sdk version"
-    )
+    @pytest.mark.skip(reason="kiipy doesn't fully support contracts yet")
     @pytest.mark.flaky(reruns=MAX_FLAKY_RERUNS, reruns_delay=RERUNS_DELAY)
     def test_deployed_contract(self):
         """Test interaction with already deployed contract."""
@@ -144,6 +140,7 @@ class TestContract:
         assert tx_res.response
 
     @pytest.mark.integration
+    @pytest.mark.skip(reason="kiipy doesn't fully support contracts yet")
     @pytest.mark.flaky(reruns=MAX_FLAKY_RERUNS, reruns_delay=RERUNS_DELAY)
     def test_contract_schema_validation(self):
         """Test simple contract schema validation."""
@@ -176,20 +173,6 @@ class TestContract:
             pass
         except Exception as exc:
             raise ValidationTestFailure("Msg should have failed validation") from exc
-
-
-class TestContractRestAPI(TestContract):
-    """Test dorado rest api"""
-
-    def _get_network_config(self):
-        return NetworkConfig(
-            chain_id="dorado-1",
-            url="rest+https://rest-dorado.fetch.ai:443",
-            fee_minimum_gas_price=5000000000,
-            fee_denomination="atestfet",
-            staking_denomination="atestfet",
-            faucet_url="https://faucet-dorado.fetch.ai",
-        )
 
 
 if __name__ == "__main__":

@@ -95,6 +95,8 @@ def main():
     validators = ledger.query_validators()
     kii_aventador: Validator = None
     kii_pagani: Validator = None
+
+    # choose two of the kii validators to delegate to
     for v in validators:
         if v.moniker == "KiiAventador":
             kii_aventador = v

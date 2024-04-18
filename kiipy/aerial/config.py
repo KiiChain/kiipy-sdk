@@ -19,7 +19,6 @@
 
 """Network configurations."""
 
-import warnings
 from dataclasses import dataclass
 from typing import Optional, Union
 
@@ -107,64 +106,9 @@ class NetworkConfig:
         )
 
     @classmethod
-    def fetchai_alpha_testnet(cls):
-        """Get the fetchai alpha testnet.
-
-        :raises RuntimeError: No alpha testnet available
-        """
-        raise RuntimeError("No alpha testnet available")
-
-    @classmethod
-    def fetchai_beta_testnet(cls):
-        """Get the Fetchai beta testnet.
-
-        :raises RuntimeError: No beta testnet available
-        """
-        raise RuntimeError("No beta testnet available")
-
-    @classmethod
     def fetchai_stable_testnet(cls):
         """Get the fetchai stable testnet.
 
         :return: fetchai stable testnet. For now dorado is fetchai stable testnet.
         """
         return cls.fetchai_dorado_testnet()
-
-    @classmethod
-    def fetchai_mainnet(cls) -> "NetworkConfig":
-        """Get the fetchai mainnet configuration.
-
-        :return: fetch mainnet configuration
-        """
-        return NetworkConfig(
-            chain_id="fetchhub-4",
-            url="grpc+https://grpc-fetchhub.fetch.ai",
-            fee_minimum_gas_price=0,
-            fee_denomination="afet",
-            staking_denomination="afet",
-            faucet_url=None,
-        )
-
-    @classmethod
-    def fetch_mainnet(cls) -> "NetworkConfig":
-        """Get the fetch mainnet.
-
-        :return: fetch mainnet configurations
-        """
-        warnings.warn(
-            "fetch_mainnet is deprecated, use fetchai_mainnet instead",
-            DeprecationWarning,
-        )
-        return cls.fetchai_mainnet()
-
-    @classmethod
-    def latest_stable_testnet(cls) -> "NetworkConfig":
-        """Get the latest stable testnet.
-
-        :return: latest stable testnet
-        """
-        warnings.warn(
-            "latest_stable_testnet is deprecated, use fetchai_stable_testnet instead",
-            DeprecationWarning,
-        )
-        return cls.fetchai_stable_testnet()
