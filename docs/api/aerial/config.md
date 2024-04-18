@@ -63,33 +63,3 @@ Kii testnet.
 
 Network configuration
 
-<a id="kiipy.aerial.config.NetworkConfig.fetchai_dorado_testnet"></a>
-
-#### fetchai`_`dorado`_`testnet
-
-```python
-@classmethod
-def fetchai_dorado_testnet(cls) -> "NetworkConfig"
-```
-
-Fetchai dorado testnet.
-
-**Returns**:
-
-Network configuration
-
-<a id="kiipy.aerial.config.NetworkConfig.fetchai_stable_testnet"></a>
-
-#### fetchai`_`stable`_`testnet
-
-```python
-@classmethod
-def fetchai_stable_testnet(cls)
-```
-
-Get the fetchai stable testnet.
-
-**Returns**:
-
-fetchai stable testnet. For now dorado is fetchai stable testnet.
-

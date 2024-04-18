@@ -89,26 +89,3 @@ class NetworkConfig:
             staking_denomination="tkii",
             faucet_url=None,
         )
-
-    @classmethod
-    def fetchai_dorado_testnet(cls) -> "NetworkConfig":
-        """Fetchai dorado testnet.
-
-        :return: Network configuration
-        """
-        return NetworkConfig(
-            chain_id="dorado-1",
-            url="grpc+https://grpc-dorado.fetch.ai",
-            fee_minimum_gas_price=5000000000,
-            fee_denomination="atestfet",
-            staking_denomination="atestfet",
-            faucet_url="https://faucet-dorado.fetch.ai",
-        )
-
-    @classmethod
-    def fetchai_stable_testnet(cls):
-        """Get the fetchai stable testnet.
-
-        :return: fetchai stable testnet. For now dorado is fetchai stable testnet.
-        """
-        return cls.fetchai_dorado_testnet()
