@@ -16,7 +16,7 @@ A big part of the cosmos networks is staking. Staking is the process where you d
 To stake `20` tokens with the specific validator using a [`Wallet`](wallets-and-keys.md):
 
 ```python
-validator_address = 'fetchvaloper1e4ykjwcwhwtasqxq50d4m7xz9hh7a86e9y8h87'
+validator_address = 'kiivaloper1elt33anpqjz6fhqv4cn6h9k7r8x40zt4c63eul'
 
 tx = ledger_client.delegate_tokens(validator_address, 20, wallet)
 
@@ -29,8 +29,8 @@ tx.wait_to_complete()
 To redelegate `10` tokens from an existing validator (with the address `validator_address`) to another (with the address `alternate_validator_address`):
 
 ```python
-validator_address = 'fetchvaloper1e4ykjwcwhwtasqxq50d4m7xz9hh7a86e9y8h87'
-alternate_validator_address = 'fetchvaloper1e4ykjwcwhwtasqxq50d4m7xz9hh7a86e9y8h87'
+validator_address = 'kiivaloper1elt33anpqjz6fhqv4cn6h9k7r8x40zt4c63eul'
+alternate_validator_address = 'kiivaloper1vuvd9gnm8rpj5u9p9kdwqjuuccmtvetum4tf3t'
 
 tx = ledger_client.redelegate_tokens(validator_address, alternate_validator_address, 10, wallet)
 
@@ -72,7 +72,7 @@ tx.wait_to_complete()
 At any point you can query the stake information of any particular address. This can be done using the `LedgerClient` as shown in the example below:
 
 ```python
-address = 'fetch1h2l3cnu7e23whmd5yrfeunacez9tv0plv5rxqy'
+address = 'kii1pyt53arxkg5t4aww892esskltrf54mg88va98y'
 
 s = ledger_client.query_staking_summary(address)
 print(f"Summary: Staked: {s.total_staked} Unbonding: {s.total_unbonding} Rewards: {s.total_rewards}")

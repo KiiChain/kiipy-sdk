@@ -1,8 +1,8 @@
-# CosmPy
+# KiiPy
 
-CosmPy is a Python library for interacting with Cosmos-based blockchain networks.
+KiiPy is a Python library for interacting with the Kii blockchain and other Cosmos-based blockchain networks
 
-* A simplified API for querying, sending transactions, etc., to Cosmos-SDK based blockchains. 
+* A simplified API for querying, sending transactions, etc., to Cosmos-SDK based blockchains.
 * Easy interface for deploying and interacting with Cosmwasm smart contracts.
 * Access to low-level ledger APIs for advanced use-cases.
 
@@ -11,25 +11,27 @@ CosmPy is a Python library for interacting with Cosmos-based blockchain networks
 Ensure you have Python (version `3.8`, `3.9`, `3.10`, or `3.11`):
 
 ``` bash
-pip3 install cosmpy
+pip3 install kiipy
 ```
 
 ## Version
 
-CosmPy's latest version:
+KiiPy's latest version:
 
-<a href="https://img.shields.io/pypi/v/cosmpy" target="_blank"><img alt="PyPI" src="https://img.shields.io/pypi/v/cosmpy" /></a>
+[comment]: # (TODO: Add proper badges here)
+
+<!-- <a href="https://img.shields.io/pypi/v/kiipy" target="_blank"><img alt="PyPI" src="https://img.shields.io/pypi/v/kiipy" /></a> -->
 
 ## Contributing
 
 All contributions are very welcome! Remember, contribution is not only PRs and code, but any help with docs or helping other developers solve their issues are very appreciated!
 
-Read below to learn how you can take part in the CosmPy project.
+Read below to learn how you can take part in the KiiPy project.
 
 ### Repository
 
 ```
-https://github.com/fetchai/cosmpy
+https://github.com/KiiBlockchain/kiipy
 ```
 
 ### Code of Conduct
@@ -50,11 +52,11 @@ We use [GitHub Issues][issues] for tracking requests and bugs, and [GitHub Discu
 
 ## License
 
-The CosmPy project is licensed under [Apache License 2.0][license].
+The KiiPy project is licensed under [Apache License 2.0][license].
 
-[contributing]: https://github.com/fetchai/cosmpy/blob/main/CONTRIBUTING.md
-[developing]: https://github.com/fetchai/cosmpy/blob/main/DEVELOPING.md
-[coc]: https://github.com/fetchai/cosmpy/blob/main/CODE_OF_CONDUCT.md
-[discussion]: https://github.com/fetchai/cosmpy/discussions
-[issues]: https://github.com/fetchai/cosmpy/issues
-[license]: https://github.com/fetchai/cosmpy/blob/main/LICENSE
+[contributing]: https://github.com/KiiBlockchain/kiipy/blob/main/CONTRIBUTING.md
+[developing]: https://github.com/KiiBlockchain/kiipy/blob/main/DEVELOPING.md
+[coc]: https://github.com/KiiBlockchain/kiipy/blob/main/CODE_OF_CONDUCT.md
+[discussion]: https://github.com/KiiBlockchain/kiipy/discussions
+[issues]: https://github.com/KiiBlockchain/kiipy/issues
+[license]: https://github.com/KiiBlockchain/kiipy/blob/main/LICENSE
