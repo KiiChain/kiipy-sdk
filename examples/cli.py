@@ -160,7 +160,6 @@ def get_stakes(address: str) -> None:
     # get staking summary
     client = _connect()
     summary = client.query_staking_summary(address)
-    print(summary)
 
     # print bonded tokens
     data: List[List[Any]] = []
