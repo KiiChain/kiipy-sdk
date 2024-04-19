@@ -180,8 +180,7 @@ class WasmRestClientTestCase(unittest.TestCase):
             == expected_response
         )
         assert (
-            mock_client.last_base_url
-            == "/cosmwasm/wasm/v1/contract/kiicontractaddress"
+            mock_client.last_base_url == "/cosmwasm/wasm/v1/contract/kiicontractaddress"
         )
 
     @staticmethod

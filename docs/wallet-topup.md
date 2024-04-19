@@ -66,7 +66,7 @@ Next, you will need to define the amount to top-up, the threshold that will trig
 
 # Top-up amount
 amount = 10000000000000000
-top_up_amount = Coin(amount=str(amount), denom="atestfet")
+top_up_amount = Coin(amount=str(amount), denom="tkii")
 
 # Minimum balance for task_wallet
 minimum_balance = 1000000000000000
