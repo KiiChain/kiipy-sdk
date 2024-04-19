@@ -37,6 +37,7 @@ from pathlib import Path
 SUPPORTED_YEARS = list(map(str, range(2019, datetime.datetime.now().year + 1)))
 
 
+# TODO: Update Copyright header to Kii Global copyright
 HEADER_REGEX = rf"""(#!/usr/bin/env python3
 )?# -\*- coding: utf-8 -\*-
 # ------------------------------------------------------------------------------

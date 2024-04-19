@@ -30,6 +30,19 @@ A python library for interacting with the Kii blockchain and other Cosmos-based 
   </a> -->
 </p>
 
+*This project has been forked from [Fetch AI's CosmPy](https://github.com/fetchai/cosmpy).*
+
+## DEVELOPMENT NOTES
+
+**This project is still under development.**
+
+Details on how to setup the dev environment can be found in the [development guidelines][developing]. Using poetry virtual environment is highly encouraged to ensure seamless development.
+
+Notes:
+- Items that need to be looked into are marked as `TODO:` in the code and docs.
+- Workflows are failing due to usage limits. It's advisable to fix this to ensure code quality. Current workaround is to make sure to run corresponding checks and tests locally.
+
+
 ## Installation
 
 ### Install with pip
@@ -76,6 +89,7 @@ for coin in balances:
 
 ## Documentation
 
+[comment]: # (TODO: Update this and other occurence with proper docs url)
 The full documentation can be found [here](https://docs.kiiglobal.io/kiipy/).
 
 ## Examples
