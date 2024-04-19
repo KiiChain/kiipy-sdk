@@ -19,8 +19,8 @@
 
 """Osmosis tx test."""
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.wallet import LocalWallet
+from kiipy.aerial.client import LedgerClient
+from kiipy.aerial.wallet import LocalWallet
 
 from tests.integration.test_tx import TestTx as BaseTestTx
 from tests.third_party.osmosis_testnet.net_config import (

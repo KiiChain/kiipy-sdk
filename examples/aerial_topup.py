@@ -23,14 +23,14 @@ import time
 
 from google.protobuf import any_pb2
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.client.utils import prepare_and_broadcast_basic_transaction
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx import Transaction
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgExec
-from cosmpy.protos.cosmos.bank.v1beta1.tx_pb2 import MsgSend
-from cosmpy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+from kiipy.aerial.client import LedgerClient, NetworkConfig
+from kiipy.aerial.client.utils import prepare_and_broadcast_basic_transaction
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.tx import Transaction
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgExec
+from kiipy.protos.cosmos.bank.v1beta1.tx_pb2 import MsgSend
+from kiipy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
 
 
 def _parse_commandline():
@@ -66,7 +66,8 @@ def _parse_commandline():
 
 def main():
     """Run main."""
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
+    # TODO: make sure to run this script using a network config with faucet api (kii_testnet doesn't have one)
+    ledger = LedgerClient(NetworkConfig.kii_testnet())
     args = _parse_commandline()
 
     wallet_address = args.wallet_address
@@ -75,7 +76,7 @@ def main():
 
     # Use aerial_authz.py to authorize authz_wallet address to send tokens from wallet
     authz_wallet = LocalWallet.generate()
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    faucet_api = FaucetApi(NetworkConfig.kii_testnet())
 
     wallet_balance = ledger.query_bank_balance(authz_wallet.address())
 
@@ -88,7 +89,7 @@ def main():
 
     # Top-up amount
     amount = args.top_up_amount
-    top_up_amount = Coin(amount=str(amount), denom="atestfet")
+    top_up_amount = Coin(amount=str(amount), denom="tkii")
 
     # Minimum balance for task_wallet
     minimum_balance = args.minimum_balance

@@ -1,10 +1,10 @@
-<a id="cosmpy.mnemonic.words.english"></a>
+<a id="kiipy.mnemonic.words.english"></a>
 
-# cosmpy.mnemonic.words.english
+# kiipy.mnemonic.words.english
 
 Mnemonic words.
 
-<a id="cosmpy.mnemonic.words.english.decompress_words"></a>
+<a id="kiipy.mnemonic.words.english.decompress_words"></a>
 
 #### decompress`_`words
 

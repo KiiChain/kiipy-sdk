@@ -1,0 +1,76 @@
+name: Push
+on: push
+
+# TODO: check how to reuse similar jobs in different workflows
+
+jobs:
+  code_quality_check:
+    name: Check Code Quality
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        python-version:
+          - '3.9'
+        tox-job:
+          - black-check
+          - isort-check
+          - flake8
+          - vulture
+          - bandit
+          - safety
+          # - mypy disable mypy for now; TODO: investigate why _reflection.GeneratedProtocolMessageType where not in the newly-generated protos
+          - pylint
+          - liccheck
+          - copyright-check
+          - check-manifest
+          - check_api_docs
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '${{ matrix.python-version }}'
+      - name: Install dependencies
+        run: pip install tox==3.25.1
+      - name: 'Run check ${{ matrix.tox-job }}'
+        run: |
+          tox -e ${{ matrix.tox-job }}
+  spell-check:
+    name: Check Spelling
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: rojopolis/spellcheck-github-actions@0.25.0
+        with:
+          config_path: .spellcheck.yml
+  unit_tests:
+    name: Unit Tests
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        python-version:
+          - '3.8'
+          - '3.9'
+          - '3.10'
+          - '3.11'
+          - '3.12'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '${{ matrix.python-version }}'
+      - name: Install dependencies
+        run: pip install tox==3.25.1
+      - name: Unit Tests
+        run: |
+          tox -e test-unit
+        shell: bash
+      - name: Coverage Report
+        run: tox -e coverage-report

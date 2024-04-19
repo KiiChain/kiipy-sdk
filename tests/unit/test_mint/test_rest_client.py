@@ -23,9 +23,9 @@ import unittest
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy.common.utils import json_encode
-from cosmpy.mint.rest_client import MintRestClient
-from cosmpy.protos.cosmos.mint.v1beta1.query_pb2 import (
+from kiipy.common.utils import json_encode
+from kiipy.mint.rest_client import MintRestClient
+from kiipy.protos.cosmos.mint.v1beta1.query_pb2 import (
     QueryAnnualProvisionsResponse,
     QueryInflationResponse,
     QueryParamsResponse,
@@ -116,7 +116,7 @@ class MintRestClientTestCase(unittest.TestCase):
         content = {
             "params": {
                 "mintDenom": "string",
-                "inflationRate": "0.12345",
+                "inflationRateChange": "0.12345",
                 "blocksPerYear": "1234",
             }
         }
@@ -127,7 +127,7 @@ class MintRestClientTestCase(unittest.TestCase):
         mint = MintRestClient(mock_client)
 
         assert mint.Params().params.blocks_per_year == 1234
-        assert mint.Params().params.inflation_rate == "0.12345"
+        assert mint.Params().params.inflation_rate_change == "0.12345"
         assert mint.Params().params.mint_denom == "string"
         assert mint.Params() == expected_response
         assert mock_client.last_base_url == "/cosmos/mint/v1beta1/params"

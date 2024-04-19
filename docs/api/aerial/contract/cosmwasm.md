@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.contract.cosmwasm"></a>
+<a id="kiipy.aerial.contract.cosmwasm"></a>
 
-# cosmpy.aerial.contract.cosmwasm
+# kiipy.aerial.contract.cosmwasm
 
 Cosmwasm contract store, instantiate, execute messages.
 
-<a id="cosmpy.aerial.contract.cosmwasm.create_cosmwasm_store_code_msg"></a>
+<a id="kiipy.aerial.contract.cosmwasm.create_cosmwasm_store_code_msg"></a>
 
 #### create`_`cosmwasm`_`store`_`code`_`msg
 
@@ -24,7 +24,7 @@ Create cosmwasm store code message.
 
 cosmwasm store code message
 
-<a id="cosmpy.aerial.contract.cosmwasm.create_cosmwasm_instantiate_msg"></a>
+<a id="kiipy.aerial.contract.cosmwasm.create_cosmwasm_instantiate_msg"></a>
 
 #### create`_`cosmwasm`_`instantiate`_`msg
 
@@ -53,7 +53,7 @@ Create cosmwasm instantiate message.
 
 cosmwasm instantiate message
 
-<a id="cosmpy.aerial.contract.cosmwasm.create_cosmwasm_migrate_msg"></a>
+<a id="kiipy.aerial.contract.cosmwasm.create_cosmwasm_migrate_msg"></a>
 
 #### create`_`cosmwasm`_`migrate`_`msg
 
@@ -76,7 +76,7 @@ Create cosmwasm migrate message.
 
 cosmwasm migrate message
 
-<a id="cosmpy.aerial.contract.cosmwasm.create_cosmwasm_execute_msg"></a>
+<a id="kiipy.aerial.contract.cosmwasm.create_cosmwasm_execute_msg"></a>
 
 #### create`_`cosmwasm`_`execute`_`msg
 
@@ -101,7 +101,7 @@ Create cosmwasm execute message.
 
 cosmwasm execute message
 
-<a id="cosmpy.aerial.contract.cosmwasm.create_cosmwasm_update_admin_msg"></a>
+<a id="kiipy.aerial.contract.cosmwasm.create_cosmwasm_update_admin_msg"></a>
 
 #### create`_`cosmwasm`_`update`_`admin`_`msg
 
@@ -124,7 +124,7 @@ Create cosmwasm update admin message.
 
 cosmwasm update admin message
 
-<a id="cosmpy.aerial.contract.cosmwasm.create_cosmwasm_clear_admin_msg"></a>
+<a id="kiipy.aerial.contract.cosmwasm.create_cosmwasm_clear_admin_msg"></a>
 
 #### create`_`cosmwasm`_`clear`_`admin`_`msg
 

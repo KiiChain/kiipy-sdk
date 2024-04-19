@@ -29,30 +29,30 @@ from pathlib import Path
 
 DOCS_DIR = Path("docs/")
 API_DIR = DOCS_DIR / "api/"
-COSMPY_DIR = Path("cosmpy")
+KIIPY_DIR = Path("kiipy")
 
 IGNORE_NAMES = {r"^__version__\.py$", r"^py\.typed$", r"^.*_pb2.py$"}
 IGNORE_PREFIXES = {
-    Path("cosmpy", "__init__.py"),
-    Path("cosmpy", "aerial", "__init__.py"),
-    Path("cosmpy", "auth"),
-    Path("cosmpy", "bank"),
-    Path("cosmpy", "common"),
-    Path("cosmpy", "cosmwasm"),
-    Path("cosmpy", "crypto"),
-    Path("cosmpy", "distribution"),
-    Path("cosmpy", "evidence"),
-    Path("cosmpy", "gov"),
-    Path("cosmpy", "ibc"),
-    Path("cosmpy", "mint"),
-    Path("cosmpy", "params"),
-    Path("cosmpy", "protos"),
-    Path("cosmpy", "slashing"),
-    Path("cosmpy", "staking"),
-    Path("cosmpy", "tendermint"),
-    Path("cosmpy", "tx"),
-    Path("cosmpy", "upgrade"),
-    Path("cosmpy", "whitelist.py"),
+    Path("kiipy", "__init__.py"),
+    Path("kiipy", "aerial", "__init__.py"),
+    Path("kiipy", "auth"),
+    Path("kiipy", "bank"),
+    Path("kiipy", "common"),
+    Path("kiipy", "cosmwasm"),
+    Path("kiipy", "crypto"),
+    Path("kiipy", "distribution"),
+    Path("kiipy", "evidence"),
+    Path("kiipy", "gov"),
+    Path("kiipy", "ibc"),
+    Path("kiipy", "mint"),
+    Path("kiipy", "params"),
+    Path("kiipy", "protos"),
+    Path("kiipy", "slashing"),
+    Path("kiipy", "staking"),
+    Path("kiipy", "tendermint"),
+    Path("kiipy", "tx"),
+    Path("kiipy", "upgrade"),
+    Path("kiipy", "whitelist.py"),
 }
 
 
@@ -102,9 +102,9 @@ def should_skip(module_path: Path) -> bool:
     return False
 
 
-def _generate_apidocs_cosmpy_modules() -> None:
-    """Generate API docs for cosmpy.* modules."""
-    for module_path in filter(is_not_dir, Path(COSMPY_DIR).rglob("*")):
+def _generate_apidocs_kiipy_modules() -> None:
+    """Generate API docs for kiipy.* modules."""
+    for module_path in filter(is_not_dir, Path(KIIPY_DIR).rglob("*")):
         print(f"Processing {module_path}... ", end="")
         if should_skip(module_path):
             continue
@@ -153,7 +153,7 @@ def generate_api_docs() -> None:
     """Generate the api docs."""
     shutil.rmtree(API_DIR, ignore_errors=True)
     API_DIR.mkdir()
-    _generate_apidocs_cosmpy_modules()
+    _generate_apidocs_kiipy_modules()
 
 
 def install(package: str) -> int:

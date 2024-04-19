@@ -23,15 +23,15 @@ from datetime import datetime, timedelta
 
 from google.protobuf import any_pb2, timestamp_pb2
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.client.utils import prepare_and_broadcast_basic_transaction
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx import Transaction
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.protos.cosmos.authz.v1beta1.authz_pb2 import Grant
-from cosmpy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgGrant
-from cosmpy.protos.cosmos.bank.v1beta1.authz_pb2 import SendAuthorization
-from cosmpy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+from kiipy.aerial.client import LedgerClient, NetworkConfig
+from kiipy.aerial.client.utils import prepare_and_broadcast_basic_transaction
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.tx import Transaction
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.protos.cosmos.authz.v1beta1.authz_pb2 import Grant
+from kiipy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgGrant
+from kiipy.protos.cosmos.bank.v1beta1.authz_pb2 import SendAuthorization
+from kiipy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
 
 
 def _parse_commandline():
@@ -66,8 +66,9 @@ def main():
 
     authz_address = args.authz_address
 
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    # TODO: make sure to run this script using a network config with faucet api (kii_testnet doesn't have one)
+    ledger = LedgerClient(NetworkConfig.kii_testnet())
+    faucet_api = FaucetApi(NetworkConfig.kii_testnet())
 
     total_authz_time = args.total_authz_time
     wallet_balance = ledger.query_bank_balance(wallet.address())
@@ -79,7 +80,7 @@ def main():
         faucet_api.get_wealth(wallet.address())
         wallet_balance = ledger.query_bank_balance(wallet.address())
 
-    spend_amount = Coin(amount=str(amount), denom="atestfet")
+    spend_amount = Coin(amount=str(amount), denom="tkii")
 
     # Authorize authz_wallet to send tokens from wallet
     authz_any = any_pb2.Any()

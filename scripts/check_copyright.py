@@ -37,6 +37,7 @@ from pathlib import Path
 SUPPORTED_YEARS = list(map(str, range(2019, datetime.datetime.now().year + 1)))
 
 
+# TODO: Update Copyright header to Kii Global copyright
 HEADER_REGEX = rf"""(#!/usr/bin/env python3
 )?# -\*- coding: utf-8 -\*-
 # ------------------------------------------------------------------------------
@@ -77,13 +78,13 @@ def check_copyright(file: Path) -> bool:
 
 if __name__ == "__main__":
     python_files = itertools.chain(
-        Path("cosmpy").glob("**/*.py"),
+        Path("kiipy").glob("**/*.py"),
     )
 
-    # filter out protobuf files (*_pb2.py) and all files under cosmpy/protos
+    # filter out protobuf files (*_pb2.py) and all files under kiipy/protos
     python_files_filtered = filter(
         lambda x: not str(x).endswith("_pb2.py")
-        and str(x).find(os.path.join("cosmpy", "protos")) == -1,
+        and str(x).find(os.path.join("kiipy", "protos")) == -1,
         python_files,
     )
 

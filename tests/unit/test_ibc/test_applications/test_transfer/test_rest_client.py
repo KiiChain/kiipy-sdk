@@ -22,11 +22,11 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy.common.utils import json_encode
-from cosmpy.ibc.applications.transfer.rest_client import (  # type: ignore
+from kiipy.common.utils import json_encode
+from kiipy.ibc.applications.transfer.rest_client import (  # type: ignore
     IBCApplicationsTransferRestClient,
 )
-from cosmpy.protos.ibc.applications.transfer.v1.query_pb2 import (
+from kiipy.protos.ibc.applications.transfer.v1.query_pb2 import (
     QueryDenomTraceRequest,
     QueryDenomTraceResponse,
     QueryDenomTracesRequest,

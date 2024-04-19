@@ -23,11 +23,11 @@ from time import sleep
 
 import requests
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.contract import LedgerContract
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.crypto.address import Address
+from kiipy.aerial.client import LedgerClient, NetworkConfig
+from kiipy.aerial.contract import LedgerContract
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.crypto.address import Address
 
 
 COIN_PRICE_URL = (
@@ -58,8 +58,9 @@ def main():
 
     wallet = LocalWallet.generate()
 
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    # TODO: make sure to run this script using a network config with faucet api (kii_testnet doesn't have one)
+    ledger = LedgerClient(NetworkConfig.kii_testnet())
+    faucet_api = FaucetApi(NetworkConfig.kii_testnet())
 
     wallet_balance = ledger.query_bank_balance(wallet.address())
 

@@ -21,10 +21,10 @@ from typing import Optional
 
 import pytest
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.wallet import LocalWallet
+from kiipy.aerial.client import LedgerClient
+from kiipy.aerial.config import NetworkConfig
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.wallet import LocalWallet
 
 
 MAX_FLAKY_RERUNS = 3
@@ -34,12 +34,11 @@ RERUNS_DELAY = 10
 class TestTx:
     """Test Basic Transaction"""
 
-    COIN = "atestfet"
-    GAS_LIMIT: Optional[int] = None
+    COIN = "tkii"
 
     def _get_network_config(self):
         """Get network config."""
-        return NetworkConfig.fetchai_stable_testnet()
+        return NetworkConfig.kii_testnet()
 
     def get_ledger(self):
         """Get Ledger"""
@@ -58,6 +57,9 @@ class TestTx:
         return wallet2
 
     @pytest.mark.integration
+    @pytest.mark.skip(
+        reason="there's no way to provide tokens to a newly-created wallet via api for now"
+    )
     @pytest.mark.flaky(reruns=MAX_FLAKY_RERUNS, reruns_delay=RERUNS_DELAY)
     def test_faucet_transaction_balance(self):
         """Test faucet claims, tx settled, balance check."""
@@ -65,8 +67,12 @@ class TestTx:
         wallet1 = self.get_wallet_1()
         wallet2 = self.get_wallet_2()
 
-        wallet1_initial_balance = ledger.query_bank_balance(wallet1.address())
-        wallet2_balance1 = ledger.query_bank_balance(wallet2.address())
+        wallet1_initial_balance = ledger.query_bank_balance(
+            wallet1.address(), denom=self.COIN
+        )
+        wallet2_initial_balance = ledger.query_bank_balance(
+            wallet2.address(), denom=self.COIN
+        )
         tokens_to_send = int(10)
         assert wallet1_initial_balance >= tokens_to_send
         tx = ledger.send_tokens(
@@ -74,27 +80,12 @@ class TestTx:
             tokens_to_send,
             self.COIN,
             wallet1,
-            gas_limit=self.GAS_LIMIT,
         )
         tx.wait_to_complete()
-        wallet2_balance2 = ledger.query_bank_balance(wallet2.address())
-        assert wallet2_balance2 == wallet2_balance1 + tokens_to_send
-        wallet1_balance = ledger.query_bank_balance(wallet1.address())
-        assert wallet1_balance < wallet1_initial_balance
-
-
-class TestTxRestAPI(TestTx):
-    """Test dorado rest api"""
-
-    def _get_network_config(self):
-        return NetworkConfig(
-            chain_id="dorado-1",
-            url="rest+https://rest-dorado.fetch.ai:443",
-            fee_minimum_gas_price=5000000000,
-            fee_denomination="atestfet",
-            staking_denomination="atestfet",
-            faucet_url="https://faucet-dorado.fetch.ai",
-        )
+        wallet2_final_balance = ledger.query_bank_balance(wallet2.address())
+        assert wallet2_final_balance == wallet2_initial_balance + tokens_to_send
+        wallet1_final_balance = ledger.query_bank_balance(wallet1.address())
+        assert wallet1_final_balance < wallet1_initial_balance
 
 
 if __name__ == "__main__":

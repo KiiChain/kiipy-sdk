@@ -47,8 +47,13 @@ WasmD
 FetchD
 blockchain
 CosmPy
+CosmPy's
 Cosmpy
 cosmpy
+KiiPy
+KiiPy's
+Kiipy
+kiipy
 blockchains
 Cosmwasm
 hashlib
@@ -163,8 +168,6 @@ USD
 aea
 coingecko
 CLI
-CosmPy's
-CosmPy
 isort
 liccheck
 MakeFile
@@ -312,3 +315,4 @@ noqa
 biputils
 googleapis
 M1
+BSR

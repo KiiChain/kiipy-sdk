@@ -20,11 +20,11 @@
 # ------------------------------------------------------------------------------
 import random
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx_helpers import SubmittedTx
-from cosmpy.aerial.wallet import LocalWallet
+from kiipy.aerial.client import LedgerClient
+from kiipy.aerial.config import NetworkConfig
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.tx_helpers import SubmittedTx
+from kiipy.aerial.wallet import LocalWallet
 
 
 def _wait_for_tx(operation: str, tx: SubmittedTx):
@@ -37,8 +37,9 @@ def main():
     """Run main."""
     alice = LocalWallet.generate()
 
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    # TODO: make sure to run this script using a network config with faucet api (kii_testnet doesn't have one)
+    ledger = LedgerClient(NetworkConfig.kii_testnet())
+    faucet_api = FaucetApi(NetworkConfig.kii_testnet())
 
     alice_balance = ledger.query_bank_balance(alice.address())
 

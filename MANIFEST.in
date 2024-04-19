@@ -1,4 +1,4 @@
-recursive-excludecosmpy *.py
+recursive-excludekiipy *.py
 
 exclude *.in
 exclude *.json
@@ -15,6 +15,7 @@ recursive-exclude contracts *.json
 recursive-exclude docs *.*
 recursive-exclude docs *
 recursive-exclude examples *.py
+recursive-exclude examples *.md
 recursive-exclude scripts *.py
 recursive-exclude scripts *.sh
 recursive-exclude tests *.py

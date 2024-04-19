@@ -22,15 +22,15 @@
 # ------------------------------------------------------------------------------
 import json
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.client.distribution import create_withdraw_delegator_reward
-from cosmpy.aerial.client.staking import create_delegate_msg
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx import SigningCfg, Transaction
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.protos.cosmos.bank.v1beta1.query_pb2 import QueryTotalSupplyRequest
-from cosmpy.protos.cosmos.params.v1beta1.query_pb2 import QueryParamsRequest
-from cosmpy.protos.cosmos.staking.v1beta1.query_pb2 import QueryValidatorsRequest
+from kiipy.aerial.client import LedgerClient, NetworkConfig
+from kiipy.aerial.client.distribution import create_withdraw_delegator_reward
+from kiipy.aerial.client.staking import create_delegate_msg
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.tx import SigningCfg, Transaction
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.protos.cosmos.bank.v1beta1.query_pb2 import QueryTotalSupplyRequest
+from kiipy.protos.cosmos.params.v1beta1.query_pb2 import QueryParamsRequest
+from kiipy.protos.cosmos.staking.v1beta1.query_pb2 import QueryValidatorsRequest
 
 
 # This function returns the total reward for given:
@@ -58,8 +58,9 @@ def M(x, f, S, k, D):
 
 def main():
     """Run main."""
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    # TODO: make sure to run this script using a network config with faucet api (kii_testnet doesn't have one)
+    ledger = LedgerClient(NetworkConfig.kii_testnet())
+    faucet_api = FaucetApi(NetworkConfig.kii_testnet())
 
     # Set initial stake and desired stake period
     initial_stake = 50000000000000000000
@@ -142,7 +143,7 @@ def main():
 
     # Add delegate msg
     tx.add_message(
-        create_delegate_msg(alice_address, validator.address, initial_stake, "atestfet")
+        create_delegate_msg(alice_address, validator.address, initial_stake, "tkii")
     )
 
     # Add claim reward msg
@@ -159,7 +160,7 @@ def main():
     # simulate the fee for the transaction
     _, str_tx_fee = ledger.estimate_gas_and_fee_for_tx(tx)
 
-    denom = "atestfet"
+    denom = "tkii"
     tx_fee = str_tx_fee[: -len(denom)]
 
     # Add a 20% to the fee estimation to get a more conservative estimate

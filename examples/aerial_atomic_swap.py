@@ -21,12 +21,12 @@
 
 import argparse
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.contract import LedgerContract, create_cosmwasm_execute_msg
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx import SigningCfg, Transaction
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.crypto.address import Address
+from kiipy.aerial.client import LedgerClient, NetworkConfig
+from kiipy.aerial.contract import LedgerContract, create_cosmwasm_execute_msg
+from kiipy.aerial.faucet import FaucetApi
+from kiipy.aerial.tx import SigningCfg, Transaction
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.crypto.address import Address
 
 
 TOKEN_ID_1 = "680564733841876926926749214863536422912"
@@ -52,8 +52,9 @@ def main():
     alice = LocalWallet.generate()
     bob = LocalWallet.generate()
 
-    client = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    # TODO: make sure to run this script using a network config with faucet api (kii_testnet doesn't have one)
+    client = LedgerClient(NetworkConfig.kii_testnet())
+    faucet_api = FaucetApi(NetworkConfig.kii_testnet())
 
     # check to see if all the clients have enough funds
     alice_balance = client.query_bank_balance(alice.address())

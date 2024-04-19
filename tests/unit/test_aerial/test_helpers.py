@@ -21,15 +21,15 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.aerial.exceptions import NotFoundError, QueryTimeoutError
-from cosmpy.aerial.tx_helpers import SubmittedTx
+from kiipy.aerial.client import LedgerClient
+from kiipy.aerial.config import NetworkConfig
+from kiipy.aerial.exceptions import NotFoundError, QueryTimeoutError
+from kiipy.aerial.tx_helpers import SubmittedTx
 
 
 def test_broadcast_tx_timeouts():
     """Test for SubmittedTx.wait_to_complete."""
-    client = LedgerClient(NetworkConfig.fetchai_stable_testnet())
+    client = LedgerClient(NetworkConfig.kii_testnet())
     tx = SubmittedTx(client, Mock())
     poll_period = 0.1
 

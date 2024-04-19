@@ -19,19 +19,19 @@
 
 """Testcases for create instantiate and execute message."""
 
-from cosmpy.aerial.contract import (
+from kiipy.aerial.contract import (
     create_cosmwasm_execute_msg,
     create_cosmwasm_instantiate_msg,
     create_cosmwasm_migrate_msg,
 )
-from cosmpy.crypto.address import Address
+from kiipy.crypto.address import Address
 
 
 def test_create_instantiate_msg():
     """Test create instantiate message."""
-    sender = Address("fetch1r3d4azhlak4w00c5n02t9l35a3n6462vrnunel")
+    sender = Address("kii1j6aq5pp57mpp0gehgwh6wety8qmhyzlzj5mthg")
     msg = create_cosmwasm_instantiate_msg(
-        1, {}, "init-label", sender, funds="10atestfet", admin_address=sender
+        1, {}, "init-label", sender, funds="10tkii", admin_address=sender
     )
 
     assert msg.sender == str(sender)
@@ -40,24 +40,22 @@ def test_create_instantiate_msg():
     assert msg.label == "init-label"
     assert msg.admin == str(sender)
     assert len(msg.funds) == 1
-    assert msg.funds[0].denom == "atestfet"
+    assert msg.funds[0].denom == "tkii"
     assert msg.funds[0].amount == "10"
 
 
 def test_create_execute_msg():
     """Test create execute message."""
-    sender = Address("fetch1r3d4azhlak4w00c5n02t9l35a3n6462vrnunel")
-    contract = Address("fetch1faucet4p2h432pxlh9ez8jfcl9jyr2ndlx2992")
+    sender = Address("kii1j6aq5pp57mpp0gehgwh6wety8qmhyzlzj5mthg")
+    contract = Address("kii1faucet135pvcyqy8zauk6zgdfz5gsaq9dxf4w2slu5jd2")
 
-    msg = create_cosmwasm_execute_msg(
-        sender, contract, {}, funds="15atestfet,42another"
-    )
+    msg = create_cosmwasm_execute_msg(sender, contract, {}, funds="15tkii,42another")
 
     assert msg.sender == str(sender)
     assert msg.contract == str(contract)
     assert msg.msg == b"{}"
     assert len(msg.funds) == 2
-    assert msg.funds[0].denom == "atestfet"
+    assert msg.funds[0].denom == "tkii"
     assert msg.funds[0].amount == "15"
     assert msg.funds[1].denom == "another"
     assert msg.funds[1].amount == "42"
@@ -65,10 +63,8 @@ def test_create_execute_msg():
 
 def test_create_migrate_msg():
     """Test create migrate message."""
-    sender = Address("fetch1r3d4azhlak4w00c5n02t9l35a3n6462vrnunel")
-    contract_address = Address(
-        "fetch1j4t8vtg8dus7tpy6xrk9xnz5z4644qljeqtee2yw73ksvj3tqaeqp4pcec"
-    )
+    sender = Address("kii1j6aq5pp57mpp0gehgwh6wety8qmhyzlzj5mthg")
+    contract_address = Address("kii1faucet135pvcyqy8zauk6zgdfz5gsaq9dxf4w2slu5jd2")
 
     msg = create_cosmwasm_migrate_msg(1, {}, contract_address, sender)
 

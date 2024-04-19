@@ -1,22 +1,22 @@
-COSMOS_SDK_URL := https://github.com/fetchai/cosmos-sdk
-COSMOS_SDK_VERSION := v0.18.0
+COSMOS_SDK_BUF_URL := buf.build/cosmos/cosmos-sdk
+COSMOS_SDK_VERSION := v0.47.0
 COSMOS_SDK_DIR := build/cosmos-sdk-proto-schema
 
 WASMD_URL := https://github.com/CosmWasm/wasmd
 WASMD_VERSION := v0.27.0
-WASMD_DIR := build/wasm-proto-shema
+WASMD_DIR := build/wasm-proto-schema
 
 IBCGO_URL := https://github.com/cosmos/ibc-go
 IBCGO_VERSION := v2.2.0
 IBCGO_DIR := build/ibcgo-proto-schema
 
-COSMPY_PROTOS_DIR := cosmpy/protos
-COSMPY_SRC_DIR := cosmpy
-COSMPY_TESTS_DIR := tests
-COSMPY_EXAMPLES_DIR := examples
-COSMPY_SCRIPTS_DIR := scripts
+KIIPY_PROTOS_DIR := kiipy/protos
+KIIPY_SRC_DIR := kiipy
+KIIPY_TESTS_DIR := tests
+KIIPY_EXAMPLES_DIR := examples
+KIIPY_SCRIPTS_DIR := scripts
 
-PYTHON_CODE_DIRS := $(COSMPY_SRC_DIR) $(COSMPY_TESTS_DIR) $(COSMPY_EXAMPLES_DIR) $(COSMPY_SCRIPTS_DIR)
+PYTHON_CODE_DIRS := $(KIIPY_SRC_DIR) $(KIIPY_TESTS_DIR) $(KIIPY_EXAMPLES_DIR) $(KIIPY_SCRIPTS_DIR)
 
 ########################################
 ### Initialise dev environment
@@ -43,23 +43,23 @@ new-env: clean
 # Run all tests
 .PHONY: test
 test:
-	coverage run -m pytest $(COSMPY_TESTS_DIR) --doctest-modules
+	coverage run -m pytest $(KIIPY_TESTS_DIR) --doctest-modules
 	$(MAKE) coverage-report
 
 # Run all unit tests
 .PHONY: unit-test
 unit-test:
-	coverage run -m pytest $(COSMPY_TESTS_DIR) --doctest-modules -m "not integration"
+	coverage run -m pytest $(KIIPY_TESTS_DIR) --doctest-modules -m "not integration"
 
 # Run all integration tests
 .PHONY: integration-test
 integration-test:
-	coverage run -m pytest $(COSMPY_TESTS_DIR) --doctest-modules -m "integration"
+	coverage run -m pytest $(KIIPY_TESTS_DIR) --doctest-modules -m "integration"
 
 # Run all third party tests
 .PHONY: third-party-test
 third-party-test:
-	coverage run -m pytest $(COSMPY_TESTS_DIR) --doctest-modules -m "thirdparty"
+	coverage run -m pytest $(KIIPY_TESTS_DIR) --doctest-modules -m "thirdparty"
 
 # Produce the coverage report. Can see a report summary on the terminal.
 # Detailed report on all modules are placed under /coverage-report
@@ -79,7 +79,7 @@ lint: black isort flake8 vulture
 # Automatically format the code using black
 .PHONY: black
 black:
-	black $(PYTHON_CODE_DIRS) --exclude $(COSMPY_PROTOS_DIR)
+	black $(PYTHON_CODE_DIRS) --exclude $(KIIPY_PROTOS_DIR)
 
 # Automatically sort the imports
 .PHONY: isort
@@ -89,7 +89,7 @@ isort:
 # Check the code format
 .PHONY: black-check
 black-check:
-	black --check --verbose $(PYTHON_CODE_DIRS) --exclude $(COSMPY_PROTOS_DIR)
+	black --check --verbose $(PYTHON_CODE_DIRS) --exclude $(KIIPY_PROTOS_DIR)
 
 # Check the imports are sorted
 .PHONY: isort-check
@@ -117,8 +117,8 @@ security: bandit safety
 # Check the security of the code
 .PHONY: bandit
 bandit:
-	bandit -r $(COSMPY_SRC_DIR) $(COSMPY_TESTS_DIR) -s B101
-	bandit -r $(COSMPY_EXAMPLES_DIR) -s B101,B105
+	bandit -r $(KIIPY_SRC_DIR) $(KIIPY_TESTS_DIR) -s B101
+	bandit -r $(KIIPY_EXAMPLES_DIR) -s B101,B105
 
 # Check the security of the code for known vulnerabilities
 .PHONY: safety
@@ -132,7 +132,7 @@ safety:
 # Check types (statically) using mypy
 .PHONY: mypy
 mypy:
-	mypy $(PYTHON_CODE_DIRS) --exclude $(COSMPY_PROTOS_DIR)
+	mypy $(PYTHON_CODE_DIRS) --exclude $(KIIPY_PROTOS_DIR)
 
 # Lint the code using pylint
 .PHONY: pylint
@@ -259,19 +259,19 @@ unique = $(if $1,$(firstword $1) $(call unique,$(filter-out $(firstword $1),$1))
 proto: fetch_proto_schema_source generate_proto_types generate_init_py_files
 
 generate_proto_types: $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR)
-	rm -frv $(COSMPY_PROTOS_DIR)/*
-	python -m grpc_tools.protoc --proto_path=$(WASMD_DIR)/proto --proto_path=$(WASMD_DIR)/third_party/proto  --python_out=$(COSMPY_PROTOS_DIR) --grpc_python_out=$(COSMPY_PROTOS_DIR) $(shell find $(WASMD_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
-	python -m grpc_tools.protoc --proto_path=$(IBCGO_DIR)/proto --proto_path=$(IBCGO_DIR)/third_party/proto  --python_out=$(COSMPY_PROTOS_DIR) --grpc_python_out=$(COSMPY_PROTOS_DIR) $(shell find $(IBCGO_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
+	rm -frv $(KIIPY_PROTOS_DIR)/*
+	python -m grpc_tools.protoc --proto_path=$(WASMD_DIR)/proto --proto_path=$(WASMD_DIR)/third_party/proto  --python_out=$(KIIPY_PROTOS_DIR) --grpc_python_out=$(KIIPY_PROTOS_DIR) $(shell find $(WASMD_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
+	python -m grpc_tools.protoc --proto_path=$(IBCGO_DIR)/proto --proto_path=$(IBCGO_DIR)/third_party/proto  --python_out=$(KIIPY_PROTOS_DIR) --grpc_python_out=$(KIIPY_PROTOS_DIR) $(shell find $(IBCGO_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
 # ensure cosmos-sdk is last as previous modules may have duplicated proto models which are now outdated
-	python -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR)/proto --proto_path=$(COSMOS_SDK_DIR)/third_party/proto  --python_out=$(COSMPY_PROTOS_DIR) --grpc_python_out=$(COSMPY_PROTOS_DIR) $(shell find $(COSMOS_SDK_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
+	python -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR) --python_out=$(KIIPY_PROTOS_DIR) --grpc_python_out=$(KIIPY_PROTOS_DIR) $(shell find $(COSMOS_SDK_DIR) -type f -name *.proto)
 
 fetch_proto_schema_source: $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR)
 
 .PHONY: generate_init_py_files
 generate_init_py_files: generate_proto_types
-	find $(COSMPY_PROTOS_DIR)/ -type d -exec touch {}/__init__.py \;
+	find $(KIIPY_PROTOS_DIR)/ -type d -exec touch {}/__init__.py \;
 # restore root __init__.py as it contains code to have the proto files module available
-	git restore $(COSMPY_PROTOS_DIR)/__init__.py
+	git restore $(KIIPY_PROTOS_DIR)/__init__.py
 
 $(SOURCE): $(COSMOS_SDK_DIR)
 
@@ -285,8 +285,7 @@ $(GENERATED_DIRS): $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR)
 
 $(COSMOS_SDK_DIR): Makefile
 	rm -rfv $(COSMOS_SDK_DIR)
-	git clone --branch $(COSMOS_SDK_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(COSMOS_SDK_URL) $(COSMOS_SDK_DIR)
-	cd $(COSMOS_SDK_DIR) && git checkout $(COSMOS_SDK_VERSION) -- $(COSMOS_PROTO_RELATIVE_DIRS)
+	buf export $(COSMOS_SDK_BUF_URL):$(COSMOS_SDK_VERSION) --output $(COSMOS_SDK_DIR)
 
 $(WASMD_DIR): Makefile
 	rm -rfv $(WASMD_DIR)

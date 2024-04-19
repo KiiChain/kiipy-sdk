@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # ------------------------------------------------------------------------------
 #
-#   Copyright 2018-2021 Fetch.AI Limited
+#   Copyright 2018-2021 kii.AI Limited
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy.common.utils import json_encode
-from cosmpy.protos.cosmos.staking.v1beta1.query_pb2 import (
+from kiipy.common.utils import json_encode
+from kiipy.protos.cosmos.staking.v1beta1.query_pb2 import (
     QueryDelegationRequest,
     QueryDelegationResponse,
     QueryDelegatorDelegationsRequest,
@@ -54,7 +54,7 @@ from cosmpy.protos.cosmos.staking.v1beta1.query_pb2 import (
     QueryValidatorsRequest,
     QueryValidatorsResponse,
 )
-from cosmpy.staking.rest_client import StakingRestClient
+from kiipy.staking.rest_client import StakingRestClient
 
 from tests.helpers import MockRestClient
 
@@ -148,11 +148,11 @@ class StakingRestClientTestCase(TestCase):
             "delegation_responses": [
                 {
                     "delegation": {
-                        "delegator_address": "fetchdelegator",
-                        "validator_address": "fetchvalidator",
+                        "delegator_address": "kiidelegator",
+                        "validator_address": "kiivalidator",
                         "shares": "123",
                     },
-                    "balance": {"denom": "atestfet", "amount": "12345"},
+                    "balance": {"denom": "tkii", "amount": "12345"},
                 }
             ],
             "pagination": {"next_key": "", "total": "0"},
@@ -180,8 +180,8 @@ class StakingRestClientTestCase(TestCase):
         content = {
             "unbonding_responses": [
                 {
-                    "delegator_address": "fetchddelegator",
-                    "validator_address": "fetchvalidator",
+                    "delegator_address": "kiiddelegator",
+                    "validator_address": "kiivalidator",
                     "entries": [
                         {
                             "creation_height": "123",
@@ -221,11 +221,11 @@ class StakingRestClientTestCase(TestCase):
         content = {
             "delegation_response": {
                 "delegation": {
-                    "delegator_address": "fetchdelegator",
-                    "validator_address": "fetchvalidator",
+                    "delegator_address": "kiidelegator",
+                    "validator_address": "kiivalidator",
                     "shares": "123",
                 },
-                "balance": {"denom": "atestfet", "amount": "123"},
+                "balance": {"denom": "tkii", "amount": "123"},
             }
         }
         mock_client = MockRestClient(json_encode(content))
@@ -252,8 +252,8 @@ class StakingRestClientTestCase(TestCase):
         """Test UnbondingDelegation method."""
         content = {
             "unbond": {
-                "delegator_address": "fetchdelegator",
-                "validator_address": "fetchvalidator",
+                "delegator_address": "kiidelegator",
+                "validator_address": "kiivalidator",
                 "entries": [
                     {
                         "creation_height": "1",
@@ -290,11 +290,11 @@ class StakingRestClientTestCase(TestCase):
             "delegation_responses": [
                 {
                     "delegation": {
-                        "delegator_address": "fetchdelegator",
-                        "validator_address": "fetchvalidator",
+                        "delegator_address": "kiidelegator",
+                        "validator_address": "kiivalidator",
                         "shares": "123",
                     },
-                    "balance": {"denom": "atestfet", "amount": "123"},
+                    "balance": {"denom": "tkii", "amount": "123"},
                 }
             ],
             "pagination": {"next_key": "", "total": "0"},
@@ -322,8 +322,8 @@ class StakingRestClientTestCase(TestCase):
         content = {
             "unbonding_responses": [
                 {
-                    "delegator_address": "fetchdelegator",
-                    "validator_address": "fetchvalidator",
+                    "delegator_address": "kiidelegator",
+                    "validator_address": "kiivalidator",
                     "entries": [
                         {
                             "creation_height": "123",
@@ -365,9 +365,9 @@ class StakingRestClientTestCase(TestCase):
             "redelegation_responses": [
                 {
                     "redelegation": {
-                        "delegator_address": "fetchdelegator",
-                        "validator_src_address": "fetchsrc",
-                        "validator_dst_address": "fetchdst",
+                        "delegator_address": "kiidelegator",
+                        "validator_src_address": "kiisrc",
+                        "validator_dst_address": "kiidst",
                         "entries": [
                             {
                                 "creation_height": "123",
@@ -416,7 +416,7 @@ class StakingRestClientTestCase(TestCase):
         content = {
             "validators": [
                 {
-                    "operator_address": "fetchoperator",
+                    "operator_address": "kiioperator",
                     "jailed": True,
                     "status": "BOND_STATUS_UNSPECIFIED",
                     "tokens": "123",
@@ -466,7 +466,7 @@ class StakingRestClientTestCase(TestCase):
         """Test DelegatorValidator method."""
         content = {
             "validator": {
-                "operator_address": "fetchoperator",
+                "operator_address": "kiioperator",
                 "jailed": True,
                 "status": "BOND_STATUS_UNSPECIFIED",
                 "tokens": "123",
@@ -537,7 +537,7 @@ class StakingRestClientTestCase(TestCase):
                 },
                 "valset": [
                     {
-                        "operator_address": "fetchoperator",
+                        "operator_address": "kiioperator",
                         "jailed": True,
                         "status": "BOND_STATUS_UNSPECIFIED",
                         "tokens": "123",
@@ -600,7 +600,7 @@ class StakingRestClientTestCase(TestCase):
                 "max_validators": 0,
                 "max_entries": 0,
                 "historical_entries": 0,
-                "bond_denom": "atestfet",
+                "bond_denom": "tkii",
             }
         }
 

@@ -1,6 +1,6 @@
 **Oracles** are entities that can update state variables in smart contracts and whose goal is usually to accurately estimate or predict some real world quantity or quantities. These quantities can then be used in the logic of other smart contracts.
 
-This guide shows how to write a CosmPy script that deploys and updates an oracle contract with a coin price, and another script that deploys a contract that queries this coin price.
+This guide shows how to write a KiiPy script that deploys and updates an oracle contract with a coin price, and another script that deploys a contract that queries this coin price.
 
 ## Preliminaries
 
@@ -14,11 +14,11 @@ The scripts also require the following imports:
 ```python
 from time import sleep
 import requests
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.contract import LedgerContract
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.crypto.address import Address
-from cosmpy.crypto.keypairs import PrivateKey
+from kiipy.aerial.client import LedgerClient, NetworkConfig
+from kiipy.aerial.contract import LedgerContract
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.crypto.address import Address
+from kiipy.crypto.keypairs import PrivateKey
 ```
 
 ## Oracle deployer and updater
@@ -35,7 +35,7 @@ ORACLE_VALUE_DECIMALS = 5
 Next, we create a wallet and ledger interface to interact with the latest stable testnet:
 ```python
 wallet = LocalWallet(PrivateKey("T7w1yHq1QIcQiSqV27YSwk+i1i+Y4JMKhkpawCQIh6s="))
-ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
+ledger = LedgerClient(NetworkConfig.kii_testnet())
 ```
 
 Create the `LedgerContract` object:
@@ -46,7 +46,7 @@ contract = LedgerContract("oracle.wasm", ledger)
 To deploy the oracle contract, add the fee amount to the instantiation message and call the `deploy` function:
 ```python
 instantiation_message = {"fee": "100"}
-contract.deploy(instantiation_message, wallet, funds="1atestfet")
+contract.deploy(instantiation_message, wallet, funds="1tkii")
 print(f"Oracle contract deployed at: {contract.address}")
 ```
 
@@ -77,7 +77,7 @@ while True:
     sleep(UPDATE_INTERVAL_SECONDS)
 ```
 
-For the complete example script, see [aerial_oracle.py](https://github.com/fetchai/cosmpy/blob/main/examples/aerial_oracle.py).
+For the complete example script, see [aerial_oracle.py](https://github.com/KiiBlockchain/kiipy/blob/main/examples/aerial_oracle.py).
 
 ## Oracle client
 
@@ -86,7 +86,7 @@ Now we'll write a script that deploys a contract that can request the oracle val
 We again start by creating a wallet and ledger interface in a new terminal session:
 ```python
 wallet = LocalWallet(PrivateKey("CI5AZQcr+FNl2usnSIQYpXsGWvBxKLRDkieUNIvMOV8="))
-ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
+ledger = LedgerClient(NetworkConfig.kii_testnet())
 ```
 
 Set `ORACLE_CONTRACT_ADDRESS` to the address of the contract deployed in the previous script:
@@ -107,11 +107,11 @@ REQUEST_INTERVAL_SECONDS = 10
 while True:
     request_message = {"query_oracle_value": {}}
     contract.execute(
-        request_message, wallet, funds="100atestfet"
+        request_message, wallet, funds="100tkii"
     ).wait_to_complete()
     result = contract.query({"oracle_value": {}})
     print(f"Oracle value successfully retrieved: {result}")
     sleep(REQUEST_INTERVAL_SECONDS)
 ```
 
-For the complete example script, see [aerial_oracle_client.py](https://github.com/fetchai/cosmpy/blob/main/examples/aerial_oracle_client.py).
+For the complete example script, see [aerial_oracle_client.py](https://github.com/KiiBlockchain/kiipy/blob/main/examples/aerial_oracle_client.py).
