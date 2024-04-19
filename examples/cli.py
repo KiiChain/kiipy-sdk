@@ -45,7 +45,7 @@ def _connect() -> LedgerClient:
 
 
 def _connect_wallet(priv_key: str) -> LocalWallet:
-    return LocalWallet(PrivateKey(priv_key), prefix="kii")
+    return LocalWallet(PrivateKey(priv_key))
 
 
 def _save_key(filename: str, name: str, key: str) -> None:
@@ -78,7 +78,7 @@ def _wait_tx(operation: str, tx: SubmittedTx) -> None:
 def create_wallet(name: str) -> None:
     """Create a wallet. Keys will be saved at keys/NAME.pub and keys/NAME.priv."""
     print(f"Creating new wallet '{name}'...")
-    wallet = LocalWallet.generate(prefix="kii")
+    wallet = LocalWallet.generate()
     print(f"Created {name} with address {wallet.address().data}")
 
     _save_key(

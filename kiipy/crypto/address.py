@@ -28,7 +28,7 @@ from kiipy.crypto.hashfuncs import ripemd160, sha256
 from kiipy.crypto.keypairs import PublicKey
 
 
-DEFAULT_PREFIX = "fetch"
+DEFAULT_PREFIX = "kii"
 
 
 def _to_bech32(prefix: str, data: bytes) -> str:

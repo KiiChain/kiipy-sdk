@@ -53,7 +53,7 @@ class TestTx:
 
     def get_wallet_2(self):
         """Get wallet 2."""
-        wallet2 = LocalWallet.generate(prefix="kii")
+        wallet2 = LocalWallet.generate()
         return wallet2
 
     @pytest.mark.integration

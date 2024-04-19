@@ -80,7 +80,7 @@ def main():
     ledger = LedgerClient(NetworkConfig.kii_testnet())
 
     # Connect wallet
-    wallet = LocalWallet(PrivateKey(wallet_key), prefix="kii")
+    wallet = LocalWallet(PrivateKey(wallet_key))
 
     balances = ledger.query_bank_all_balances(wallet.address())
     if balances:
