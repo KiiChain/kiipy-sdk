@@ -148,7 +148,7 @@ class TestContract:
         contract = LedgerContract(
             CONTRACT_PATH, self.get_ledger(), schema_path=SCHEMA_PATH
         )
-        contract._address = "fetch1r3d4azhlak4w00c5n02t9l35a3n6462vrnunel"  # pylint: disable=protected-access
+        contract._address = "kii1j6aq5pp57mpp0gehgwh6wety8qmhyzlzj5mthg"  # pylint: disable=protected-access
 
         try:
             bad_query = {"get_count": 0}
