@@ -66,7 +66,8 @@ def _parse_commandline():
 
 def main():
     """Run main."""
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
+    # TODO: make sure to run this script using a network config with faucet api (kii_testnet doesn't have one)
+    ledger = LedgerClient(NetworkConfig.kii_testnet())
     args = _parse_commandline()
 
     wallet_address = args.wallet_address
@@ -75,7 +76,7 @@ def main():
 
     # Use aerial_authz.py to authorize authz_wallet address to send tokens from wallet
     authz_wallet = LocalWallet.generate()
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    faucet_api = FaucetApi(NetworkConfig.kii_testnet())
 
     wallet_balance = ledger.query_bank_balance(authz_wallet.address())
 
@@ -88,7 +89,7 @@ def main():
 
     # Top-up amount
     amount = args.top_up_amount
-    top_up_amount = Coin(amount=str(amount), denom="atestfet")
+    top_up_amount = Coin(amount=str(amount), denom="tkii")
 
     # Minimum balance for task_wallet
     minimum_balance = args.minimum_balance

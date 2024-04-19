@@ -12,7 +12,7 @@ Newly-created wallets are empty. Details on how to request tokens from the Kii T
 
 Full usage of the CLI app can be viewed with `python cli.py --help`.
 
-```
+```bash
 $ python cli.py --help
 Usage: cli.py [OPTIONS] COMMAND [ARGS]...
 
@@ -36,7 +36,7 @@ Commands:
 
 `--help` is also available for each command.
 
-```
+```bash
 $ python cli.py delegate --help
 Usage: cli.py delegate [OPTIONS] PRIV_KEY_PATH VALIDATOR_ADDR AMOUNT
 
@@ -61,14 +61,14 @@ Running the sample scripts require you to set the following environment variable
 - `RECEIVER_ADDR`: Address of the receiver wallet used when doing operations that involve sending tokens.
 
 To set the environment variables, run the following commands:
-```
+```bash
 export WALLET_PRIV="<wallet_private_key>"
 export WALLET_ADDR="<wallet_address>"
 export RECEIVER_ADDR="<receiver_address>"
 ```
 
 To check if the environment variables are present, run the following commands:
-```
+```bash
 printenv WALLET_PRIV
 printenv WALLET_ADDR
 printenv RECEIVER_ADDR

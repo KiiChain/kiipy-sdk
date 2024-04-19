@@ -80,7 +80,7 @@ def main():
     ledger = LedgerClient(NetworkConfig.kii_testnet())
 
     # Connect wallet
-    wallet = LocalWallet(PrivateKey(wallet_key), prefix="kii")
+    wallet = LocalWallet(PrivateKey(wallet_key))
 
     balances = ledger.query_bank_all_balances(wallet.address())
     if balances:
@@ -95,6 +95,8 @@ def main():
     validators = ledger.query_validators()
     kii_aventador: Validator = None
     kii_pagani: Validator = None
+
+    # choose two of the kii validators to delegate to
     for v in validators:
         if v.moniker == "KiiAventador":
             kii_aventador = v

@@ -10,8 +10,6 @@
   - [Tests](#tests)
   - [Miscellaneous checks](#misc)
 - [Generating python types from Cosmos SDK protobuf schemas](#protobuf)
-- [Setting up a local Fetchai node](#localnode)
-- [Running a local Fetchai node in docker](#dockernode)
 - [Contributing](#contributing)
 
 ## <a name="get"></a> Getting the Source
@@ -86,6 +84,12 @@ To run general code quality checkers, formatters and linters:
   ```
 
   Cleans your development environment and deletes temporary files and directories.
+
+To run all available checks and tests:
+
+- ``` shell
+   ./scripts/run-checks.sh
+  ```
 
 ### <a name="docs"></a>Updating documentation
 
@@ -185,59 +189,7 @@ To generate python types from Cosmos-SDK protobuf schemas, you will need [Google
 > The schema files are fetched on-demand only to enable the generation of python types.
 > Therefore, the schema files are intentionally stored as **local** files and are **NOT** checked in to this repository to minimise its filesystem footprint.
 
-## <a name="localnode"></a> To set up a local Fetchai node
-
-To set up a local Fetchai node refer to [this guide](https://docs.fetch.ai/ledger_v2/single-node-network/).
-
-## <a name="dockernode"></a> To run a local Fetchai node in docker
-
-You require [Docker](https://docs.docker.com/get-docker/) for your platform.
-
-1. Place the following entrypoint script somewhere in your system (e.g `~/fetchd_docker/fetchd_initialise.sh`):
-
-    ```bash
-    #!/usr/bin/env bash
-
-    # variables
-    export VALIDATOR_KEY_NAME=validator
-    export BOB_KEY_NAME=bob
-    export VALIDATOR_MNEMONIC="erase weekend bid boss knee vintage goat syrup use tumble device album fortune water sweet maple kind degree toss owner crane half useless sleep"
-    export BOB_MNEMONIC="account snack twist chef razor sing gain birth check identify unable vendor model utility fragile stadium turtle sun sail enemy violin either keep fiction"
-    export PASSWORD="12345678"
-    export CHAIN_ID=testing
-    export DENOM_1=stake
-    export DENOM_2=atestfet
-    export MONIKER=some-moniker
-
-
-    # Add keys
-    ( echo "$VALIDATOR_MNEMONIC"; echo "$PASSWORD"; echo "$PASSWORD"; ) |fetchd keys add $VALIDATOR_KEY_NAME --recover
-    ( echo "$BOB_MNEMONIC"; echo "$PASSWORD"; ) |fetchd keys add $BOB_KEY_NAME --recover
-
-    # Configure node
-    fetchd init --chain-id=$CHAIN_ID $MONIKER
-    echo "$PASSWORD" |fetchd add-genesis-account $(fetchd keys show $VALIDATOR_KEY_NAME -a) 100000000000000000000000$DENOM_1
-    echo "$PASSWORD" |fetchd add-genesis-account $(fetchd keys show $BOB_KEY_NAME -a) 100000000000000000000000$DENOM_2
-    echo "$PASSWORD" |fetchd gentx $VALIDATOR_KEY_NAME 10000000000000000000000$DENOM_1 --chain-id $CHAIN_ID
-    fetchd collect-gentxs
-
-    # Enable rest-api
-    sed -i '/^\[api\]$/,/^\[/ s/^enable = false/enable = true/' ~/.fetchd/config/app.toml
-    sed -i '/^\[api\]$/,/^\[/ s/^swagger = false/swagger = true/' ~/.fetchd/config/app.toml
-    fetchd start
-    ```
-
-2. Execute:
-
-    ```bash
-    docker run -it --rm --entrypoint /scripts/<ENTRYPOINT-SCRIPT-NAME> -p 9090:9090 -p 1317:1317 --mount type=bind,source=<FULL-PATH-TO-ENTRYPOINT-SCRIPT>,destination=/scripts/ <FETCH-IMAGE-TAG>
-    ```
-
-    where
-
-    - `<ENTRYPOINT-SCRIPT-NAME>` is the name of the entrypoint script (e.g.`fetchd_initialise.sh`)
-    - `<PATH-TO-ENTRYPOINT-SCRIPT>` is the path to the directory you placed the script (e.g.`~/fetchd_docker/`),
-    - `<FETCH-IMAGE-TAG>` is the tag of the FetchD docker image you want to run (e.g. `fetchai/fetchd:0.10.0` for Dorado)
+[comment]: # (TODO: Add info on how to setup a local Kii node)
 
 ## <a name="contributing"></a>Contributing
 
@@ -251,6 +203,6 @@ For instructions on how to contribute to the project (e.g. creating Pull Request
 [mkdocs]: https://www.mkdocs.org
 [material]: https://squidfunk.github.io/mkdocs-material/
 [poetry]: https://python-poetry.org
-[contributing guide]: https://github.com/fetchai/cosmpy/blob/main/CONTRIBUTING.md
-[release process]: https://github.com/fetchai/cosmpy/blob/main/scripts/RELEASE_PROCESS.md
+[contributing guide]: https://github.com/KiiBlockchain/kiipy/blob/main/CONTRIBUTING.md
+[release process]: https://github.com/KiiBlockchain/kiipy/blob/main/scripts/RELEASE_PROCESS.md
 [repo]: https://github.com/KiiBlockchain/kiipy

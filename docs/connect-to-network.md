@@ -3,10 +3,10 @@ To start interacting with a blockchain, you first need to establish a connection
 ```python
 from kiipy.aerial.client import LedgerClient, NetworkConfig
 
-ledger_client = LedgerClient(NetworkConfig.fetch_mainnet())
+ledger_client = LedgerClient(NetworkConfig.kii_testnet())
 ```
 
-For convenience, some networks' configurations are provided automatically. For example, `NetworkConfig.kii_testnet()` is the configuration for the Fetch ledger. If you want to interact with other chains, you can customise `NetworkConfig` as shown in the example below:
+For convenience, some networks' configurations are provided automatically. For example, `NetworkConfig.kii_testnet()` is the configuration for the Kii ledger. If you want to interact with other chains, you can customise `NetworkConfig` as shown in the example below:
 
 ```python
 cfg NetworkConfig(

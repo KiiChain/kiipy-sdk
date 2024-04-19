@@ -31,7 +31,7 @@ ROOT_DIR = Path(__file__).parent.parent.parent.parent
 
 
 @pytest.mark.flaky(reruns=MAX_FLAKY_RERUNS, reruns_delay=RERUNS_DELAY)
-def test_staking_example():
+def test_balance_example():
     """Test examples/aerial_kii_get_balance.py"""
     proc = subprocess.run(  # nosec
         f"python {ROOT_DIR}/examples/aerial_kii_get_balance.py",

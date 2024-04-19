@@ -1,4 +1,4 @@
-When you delegate tokens to a validator for a determined period, you can use the [`auto-compounder`](https://github.com/fetchai/cosmpy/blob/main/examples/aerial_compounder.py) to get increasing rewards. You can maximize your rewards for a given staking period by selecting an optimal compounding period. To do this, you will need to follow these steps:
+When you delegate tokens to a validator for a determined period, you can use the [`auto-compounder`](https://github.com/KiiBlockchain/kiipy/blob/main/examples/aerial_compounder.py) to get increasing rewards. You can maximize your rewards for a given staking period by selecting an optimal compounding period. To do this, you will need to follow these steps:
 
 * **Set and Query Variables**: When calculating staking rewards, you need to set and query variables such as staking parameters, transaction fees, and network parameters
 * **Calculate Reward Rate**: After you select and query all the variables needed, you will calculate the reward rate
@@ -7,10 +7,10 @@ When you delegate tokens to a validator for a determined period, you can use the
 First, you need to define a network to work with.
 
 ```python
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
+from kiipy.aerial.client import LedgerClient
+from kiipy.aerial.config import NetworkConfig
 
-ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
+ledger = LedgerClient(NetworkConfig.kii_testnet())
 ```
 
 ## Set and Query Variables
@@ -29,7 +29,7 @@ total_period = 60000
 We will now select a validator to delegate our tokens. We will do this by analyzing which one has the lowest `commission` and a reasonable amount of stake delegated compared to the total stake.
 
 ```python
-from cosmpy.protos.cosmos.staking.v1beta1.query_pb2 import QueryValidatorsRequest
+from kiipy.protos.cosmos.staking.v1beta1.query_pb2 import QueryValidatorsRequest
 
 req = QueryValidatorsRequest()
 resp = ledger.staking.Validators(req)
@@ -48,7 +48,7 @@ for validator in resp.validators:
         print(moniker[:10]," ", comission,"%     ", round(int(validator.tokens)/total_stake*100,3),"%")
 ```
 
-After running the code above, you will observe each validator commission rate and its percentage delegated of the total stake. The most important parameter to observe in each validator is the commission it will take from the rewards. We will always select a validator with the lower commission as long as it has a reasonable stake compared with the total stake. In this case, at the moment the code was run, all validators had the same commission, therefore, we simply selected the validator with the highest stake, which was validator0. Feel free to select the most convenient validator when you run the code above. We will save the variables `commission` and the fraction of our `initial_stake` to the total stake to use them later on.
+After running the code above, you will observe each validator commission rate and its percentage delegated of the total stake. The most important parameter to observe in each validator is the commission it will take from the rewards. We will always select a validator with the lower commission as long as it has a reasonable stake compared with the total stake. In this case, at the moment the code was run, all validators had the same commission, therefore, we simply selected the validator with the highest stake, which was KiiAventador. Feel free to select the most convenient validator when you run the code above. We will save the variables `commission` and the fraction of our `initial_stake` to the total stake to use them later on.
 
 
 ```python
@@ -56,7 +56,7 @@ After running the code above, you will observe each validator commission rate an
 validators = ledger.query_validators()
 
 # Query info of selected validator
-selected_validator = "validator0"
+selected_validator = "KiiAventador"
 validator = [v for v in validators if v.moniker == selected_validator][0]
 query_validator = [v for v in resp.validators if v.description.moniker == selected_validator][0]
 
@@ -71,13 +71,13 @@ pct_delegated = initial_stake/total_stake
 We need to know an estimate of the transaction fees it will cost every time we claim rewards and delegate tokens. For that, both claim rewards and delegate tokens transactions were combined into a single multi-msg transaction to simulate the total fees.
 
 ```python
-from cosmpy.aerial.client.distribution import create_withdraw_delegator_reward
-from cosmpy.aerial.client.staking import create_delegate_msg
-from cosmpy.aerial.tx import SigningCfg
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.crypto.keypairs import PrivateKey
-from cosmpy.crypto.address import Address
-from cosmpy.aerial.tx import Transaction
+from kiipy.aerial.client.distribution import create_withdraw_delegator_reward
+from kiipy.aerial.client.staking import create_delegate_msg
+from kiipy.aerial.tx import SigningCfg
+from kiipy.aerial.wallet import LocalWallet
+from kiipy.crypto.keypairs import PrivateKey
+from kiipy.crypto.address import Address
+from kiipy.aerial.tx import Transaction
 
 # Use any address with at least the amount of initial_stake available
 key = PrivateKey("XZ5BZQcr+FNl2usnSIQYpXsGWvBxKLRDkieUNIvMOV7=")
@@ -87,7 +87,7 @@ alice_address = Address(key)._display
 tx = Transaction()
 
 # Add delegate msg
-tx.add_message(create_delegate_msg(alice_address,validator.address,initial_stake,"atestfet"))
+tx.add_message(create_delegate_msg(alice_address,validator.address,initial_stake,"tkii"))
 
 # Add claim reward msg
 tx.add_message(create_withdraw_delegator_reward(alice_address, validator.address))
@@ -103,7 +103,7 @@ _, str_tx_fee = ledger.estimate_gas_and_fee_for_tx(tx)
 Since the output of this function is a string, we will convert it to an int and round it up to get a more conservative estimate for the `fee`
 
 ```python
-denom = "atestfet"
+denom = "tkii"
 tx_fee = str_tx_fee[:-len(denom)]
 
 # Add a 20% to the fee estimation to get a more conservative estimate
@@ -194,7 +194,7 @@ optimal_period = brentq(Mx_prime, 0.1, D)
 
 print("optimal_period: ", analytical_optimal_period, " minutes")
 ```
-You can make use of the `optimal_period` value in the [`staking auto-compounder`](https://github.com/fetchai/cosmpy/blob/main/examples/aerial_compounder.py) to maximize your rewards
+You can make use of the `optimal_period` value in the [`staking auto-compounder`](https://github.com/KiiBlockchain/kiipy/blob/main/examples/aerial_compounder.py) to maximize your rewards
 
 You can also plot the function along with the optimal period to observe the results
 
@@ -262,4 +262,4 @@ plt.yscale('log')
 ```
 <img src="../images/compounded_vs_simple.png" width="800"> 
 
-You can view an abbreviated version of the code at [`stake optimizer`](https://github.com/fetchai/cosmpy/blob/main/examples/aerial_stake_optimizer.py)
+You can view an abbreviated version of the code at [`stake optimizer`](https://github.com/KiiBlockchain/kiipy/blob/main/examples/aerial_stake_optimizer.py)

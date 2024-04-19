@@ -34,7 +34,7 @@ def _parse_commandline():
         type=int,
         nargs="?",
         default=9000000000000000000,
-        help="Initial amount of atestfet to delegate to validator",
+        help="Initial amount of tkii to delegate to validator",
     )
     parser.add_argument(
         "time_limit",
@@ -58,8 +58,9 @@ def main():
     """Run main."""
     args = _parse_commandline()
 
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    # TODO: make sure to run this script using a network config with faucet api (kii_testnet doesn't have one)
+    ledger = LedgerClient(NetworkConfig.kii_testnet())
+    faucet_api = FaucetApi(NetworkConfig.kii_testnet())
 
     # get all the active validators on the network
     validators = ledger.query_validators()

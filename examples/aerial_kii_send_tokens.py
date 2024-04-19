@@ -44,7 +44,7 @@ def main():
     ledger = LedgerClient(NetworkConfig.kii_testnet())
 
     # Connect wallet
-    wallet = LocalWallet(PrivateKey(sender_key), prefix="kii")
+    wallet = LocalWallet(PrivateKey(sender_key))
 
     # Get balances
     print(

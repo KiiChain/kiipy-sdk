@@ -56,7 +56,7 @@ class WasmRestClientTestCase(unittest.TestCase):
         """Test query codes for positive result."""
         content = {
             "code_infos": [
-                {"code_id": 3, "creator": "fetchaddress", "data_hash": "hash"},
+                {"code_id": 3, "creator": "kiiaddress", "data_hash": "hash"},
             ],
             "pagination": {"total": 1},
         }
@@ -72,7 +72,7 @@ class WasmRestClientTestCase(unittest.TestCase):
     def test_query_code():
         """Test query code for positive result."""
         content = {
-            "code_info": {"code_id": 3, "creator": "fetchaddress", "data_hash": "hash"},
+            "code_info": {"code_id": 3, "creator": "kiiaddress", "data_hash": "hash"},
             "data": "bytecode",
         }
         expected_response = ParseDict(content, QueryCodeResponse())
@@ -95,14 +95,14 @@ class WasmRestClientTestCase(unittest.TestCase):
         assert (
             wasm.SmartContractState(
                 QuerySmartContractStateRequest(
-                    address="fetchcontractaddress", query_data=b"{}"
+                    address="kiicontractaddress", query_data=b"{}"
                 )
             )
             == expected_response
         )
         assert (
             mock_client.last_base_url
-            == "/cosmwasm/wasm/v1/contract/fetchcontractaddress/smart/e30="
+            == "/cosmwasm/wasm/v1/contract/kiicontractaddress/smart/e30="
         )
 
     @staticmethod
@@ -117,14 +117,14 @@ class WasmRestClientTestCase(unittest.TestCase):
         assert (
             wasm.RawContractState(
                 QueryRawContractStateRequest(
-                    address="fetchcontractaddress", query_data=b"{}"
+                    address="kiicontractaddress", query_data=b"{}"
                 )
             )
             == expected_response
         )
         assert (
             mock_client.last_base_url
-            == "/cosmwasm/wasm/v1/contract/fetchcontractaddress/raw/e30="
+            == "/cosmwasm/wasm/v1/contract/kiicontractaddress/raw/e30="
         )
 
     @staticmethod
@@ -147,13 +147,13 @@ class WasmRestClientTestCase(unittest.TestCase):
 
         assert (
             wasm.AllContractState(
-                QueryAllContractStateRequest(address="fetchcontractaddress")
+                QueryAllContractStateRequest(address="kiicontractaddress")
             )
             == expected_response
         )
         assert (
             mock_client.last_base_url
-            == "/cosmwasm/wasm/v1/contract/fetchcontractaddress/state"
+            == "/cosmwasm/wasm/v1/contract/kiicontractaddress/state"
         )
 
     @staticmethod
@@ -176,19 +176,18 @@ class WasmRestClientTestCase(unittest.TestCase):
         wasm = CosmWasmRestClient(mock_client)
 
         assert (
-            wasm.ContractInfo(QueryContractInfoRequest(address="fetchcontractaddress"))
+            wasm.ContractInfo(QueryContractInfoRequest(address="kiicontractaddress"))
             == expected_response
         )
         assert (
-            mock_client.last_base_url
-            == "/cosmwasm/wasm/v1/contract/fetchcontractaddress"
+            mock_client.last_base_url == "/cosmwasm/wasm/v1/contract/kiicontractaddress"
         )
 
     @staticmethod
     def test_query_contract_by_code():
         """Test query contract by code for positive result."""
         content = {
-            "contracts": ["fetch18vd8fpwxzck93qlwghaj6arh4p7c5n890l3amr"],
+            "contracts": ["kiicontractaddress"],
             "pagination": {"total": "1"},
         }
 
@@ -231,11 +230,11 @@ class WasmRestClientTestCase(unittest.TestCase):
 
         assert (
             wasm.ContractHistory(
-                QueryContractHistoryRequest(address="fetchcontractaddress")
+                QueryContractHistoryRequest(address="kiicontractaddress")
             )
             == expected_response
         )
         assert (
             mock_client.last_base_url
-            == "/cosmwasm/wasm/v1/contract/fetchcontractaddress/history"
+            == "/cosmwasm/wasm/v1/contract/kiicontractaddress/history"
         )
