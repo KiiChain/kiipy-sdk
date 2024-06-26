@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-A python library for interacting with the Kii blockchain and other Cosmos-based blockchain networks
+A python library for interacting with KiiChain and other Cosmos-based blockchain networks
 </p>
 
 [comment]: # (TODO: Add proper badges here)
