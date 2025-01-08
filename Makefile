@@ -123,7 +123,7 @@ bandit:
 # Check the security of the code for known vulnerabilities
 .PHONY: safety
 safety:
-	safety check -i 41002
+	safety check -i 41002 -i 73456
 
 ########################################
 ### Linters

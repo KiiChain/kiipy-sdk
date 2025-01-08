@@ -54,6 +54,15 @@ KiiPy
 KiiPy's
 Kiipy
 kiipy
+Kii
+kii's
+KiiAventador
+io
+KiiBlockchain
+br
+dm
+KiiChain
+kiiglobal
 blockchains
 Cosmwasm
 hashlib
