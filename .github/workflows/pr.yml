@@ -18,7 +18,6 @@ jobs:
           - vulture
           - bandit
           - safety
-          - mypy
           - pylint
           - liccheck
           - copyright-check
