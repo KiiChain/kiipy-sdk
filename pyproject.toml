@@ -44,6 +44,7 @@ pycryptodome = "^3.18.0"
 googleapis-common-protos = "*"
 prettytable = "^3.10.0"
 setuptools = "68"
+virtualenv = "^20.26.6"
 
 [tool.poetry.group.dev]
 optional = true
