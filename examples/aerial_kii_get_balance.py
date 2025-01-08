@@ -30,7 +30,7 @@ def main():
 
     # Get balances, we expect 0 balance since the wallet is newly-created
     print(f"Getting wallet balances for {wallet_address}...")
-    denom = "tkii"
+    denom = "ukii"
     balance = ledger_client.query_bank_balance(wallet_address, denom=denom)
     print(f"{wallet_address} has a balance of {balance} {denom}.")
 
