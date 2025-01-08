@@ -48,7 +48,7 @@ Read our [development guidelines][developing] to learn about the development pro
 
 ### Issues, Questions and Discussions
 
-We use [GitHub Issues][issues] for tracking requests and bugs, and [GitHub Discussions][discussion] for general questions and discussion.
+We use [GitHub Issues][issues] for tracking requests and bugs, and for general questions and discussion.
 
 ## License
 
@@ -57,6 +57,5 @@ The KiiPy project is licensed under [Apache License 2.0][license].
 [contributing]: https://github.com/KiiBlockchain/kiipy/blob/main/CONTRIBUTING.md
 [developing]: https://github.com/KiiBlockchain/kiipy/blob/main/DEVELOPING.md
 [coc]: https://github.com/KiiBlockchain/kiipy/blob/main/CODE_OF_CONDUCT.md
-[discussion]: https://github.com/KiiBlockchain/kiipy/discussions
 [issues]: https://github.com/KiiBlockchain/kiipy/issues
 [license]: https://github.com/KiiBlockchain/kiipy/blob/main/LICENSE

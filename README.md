@@ -129,6 +129,5 @@ The KiiPy project is licensed under [Apache License 2.0][license].
 [contributing]: ./CONTRIBUTING.md
 [developing]: ./DEVELOPING.md
 [coc]: ./CODE_OF_CONDUCT.md
-[discussion]: https://github.com/KiiBlockchain/kiipy/discussions
 [issues]: https://github.com/KiiBlockchain/kiipy/issues
 [license]: ./LICENSE
