@@ -43,6 +43,7 @@ python-dateutil = "*"
 pycryptodome = "^3.18.0"
 googleapis-common-protos = "*"
 prettytable = "^3.10.0"
+setuptools = "68"
 
 
 [tool.poetry.group.dev]
