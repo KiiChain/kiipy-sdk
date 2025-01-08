@@ -1,5 +1,0 @@
-[MASTER]
-ignore=examples
-
-[MESSAGES CONTROL]
-disable=fixme,unused-import

@@ -17,7 +17,7 @@
 #
 # ------------------------------------------------------------------------------
 """Integration tests for basic transactions."""
-from typing import Optional
+from typing import Optional # pylint: disable=unused-import
 
 import pytest
 
