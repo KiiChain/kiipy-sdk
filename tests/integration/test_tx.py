@@ -17,8 +17,6 @@
 #
 # ------------------------------------------------------------------------------
 """Integration tests for basic transactions."""
-from typing import Optional # pylint: disable=unused-import
-
 import pytest
 
 from kiipy.aerial.client import LedgerClient
