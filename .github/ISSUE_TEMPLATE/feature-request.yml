@@ -13,11 +13,11 @@ body:
       label: Prerequisites
       description: Please confirm before submitting a feature request.
       options:
-        - label: I checked the [documentation](https://docs.kiiglobal.io/kiipy/) and made sure this feature does not already exist.
+        - label: I checked the [documentation](https://docs.kiiglobal.io/docs/build-on-kiichain/developer-tools/python-sdk) and made sure this feature does not already exist.
           required: true
-        - label: I checked the [existing issues](https://github.com/KiiBlockchain/kiipykii/issues) to make sure this feature has not already been requested.
+        - label: I checked the [existing issues](https://github.com/KiiChain/kiipy-sdk/issues) to make sure this feature has not already been requested.
           required: true
-        - label: I have read the [code of conduct](https://github.com/KiiBlockchain/kiipykii/blob/main/CODE_OF_CONDUCT.md) before creating this issue.
+        - label: I have read the [code of conduct](https://github.com/KiiChain/kiipy-sdk/blob/main/CODE_OF_CONDUCT.md) before creating this issue.
           required: true
   - type: textarea
     id: problem
