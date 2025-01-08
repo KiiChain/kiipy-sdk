@@ -82,8 +82,8 @@ class NetworkConfig:
         :return: Network configuration
         """
         return NetworkConfig(
-            chain_id="kiiventador",
-            url="rest+https://a.testnet.kiivalidator.com/",
+            chain_id="kiichain3",
+            url="rest+https://lcd.dos.sentry.testnet.v3.kiivalidator.com/",
             fee_minimum_gas_price=0,
             fee_denomination="tkii",
             staking_denomination="tkii",
