@@ -152,7 +152,7 @@ class StakingRestClientTestCase(TestCase):
                         "validator_address": "kiivalidator",
                         "shares": "123",
                     },
-                    "balance": {"denom": "tkii", "amount": "12345"},
+                    "balance": {"denom": "ukii", "amount": "12345"},
                 }
             ],
             "pagination": {"next_key": "", "total": "0"},
@@ -225,7 +225,7 @@ class StakingRestClientTestCase(TestCase):
                     "validator_address": "kiivalidator",
                     "shares": "123",
                 },
-                "balance": {"denom": "tkii", "amount": "123"},
+                "balance": {"denom": "ukii", "amount": "123"},
             }
         }
         mock_client = MockRestClient(json_encode(content))
@@ -294,7 +294,7 @@ class StakingRestClientTestCase(TestCase):
                         "validator_address": "kiivalidator",
                         "shares": "123",
                     },
-                    "balance": {"denom": "tkii", "amount": "123"},
+                    "balance": {"denom": "ukii", "amount": "123"},
                 }
             ],
             "pagination": {"next_key": "", "total": "0"},
@@ -600,7 +600,7 @@ class StakingRestClientTestCase(TestCase):
                 "max_validators": 0,
                 "max_entries": 0,
                 "historical_entries": 0,
-                "bond_denom": "tkii",
+                "bond_denom": "ukii",
             }
         }
 

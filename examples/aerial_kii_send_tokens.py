@@ -55,7 +55,7 @@ def main():
     )
 
     # Send tokens
-    tx = ledger.send_tokens(receiver, 1, "tkii", wallet, memo="test send")
+    tx = ledger.send_tokens(receiver, 1, "ukii", wallet, memo="test send")
 
     print(f"TX {tx.tx_hash} waiting to complete...")
     tx.wait_to_complete()

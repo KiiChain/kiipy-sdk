@@ -13,8 +13,8 @@ cfg NetworkConfig(
     chain_id="kiichain3",
     url="rest+https://lcd.dos.sentry.testnet.v3.kiivalidator.com/",
     fee_minimum_gas_price=0,
-    fee_denomination="tkii",
-    staking_denomination="tkii",
+    fee_denomination="ukii",
+    staking_denomination="ukii",
     faucet_url=None,
 )
 

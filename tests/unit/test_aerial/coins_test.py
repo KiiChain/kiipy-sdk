@@ -29,11 +29,11 @@ from kiipy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
     [
         ("", []),
         ("          ", []),
-        ("50000tkii", [Coin(amount="50000", denom="tkii")]),
+        ("50000ukii", [Coin(amount="50000", denom="ukii")]),
         (
-            "50000tkii,     200foobar",
+            "50000ukii,     200foobar",
             [
-                Coin(amount="50000", denom="tkii"),
+                Coin(amount="50000", denom="ukii"),
                 Coin(amount="200", denom="foobar"),
             ],
         ),
@@ -47,13 +47,13 @@ from kiipy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
             ],
         ),
         (
-            "500ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B, 50000tkii",
+            "500ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B, 50000ukii",
             [
                 Coin(
                     amount="500",
                     denom="ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B",
                 ),
-                Coin(amount="50000", denom="tkii"),
+                Coin(amount="50000", denom="ukii"),
             ],
         ),
     ],

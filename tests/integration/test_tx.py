@@ -32,7 +32,7 @@ RERUNS_DELAY = 10
 class TestTx:
     """Test Basic Transaction"""
 
-    COIN = "tkii"
+    COIN = "ukii"
 
     def _get_network_config(self):
         """Get network config."""
