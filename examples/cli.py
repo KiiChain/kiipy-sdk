@@ -219,7 +219,7 @@ def get_tx(tx_hash: str) -> None:
 @click.argument("receiver_addr")
 @click.argument("amount")
 @click.option(
-    "--denom", default="tkii", help="token denomination to be sent; DEFAULT: 'tkii'"
+    "--denom", default="ukii", help="token denomination to be sent; DEFAULT: 'ukii'"
 )
 @click.option("--memo", help="transaction memo")
 def send(

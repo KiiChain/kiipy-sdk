@@ -20,7 +20,7 @@ _Put an `x` in the boxes that apply_
 
 _Put an `x` in the boxes that apply._
 
-- [ ] I have read the [CONTRIBUTING](https://github.com/KiiBlockchain/kiipykii/blob/main/CONTRIBUTING.md) document.
+- [ ] I have read the [CONTRIBUTING](https://github.com/KiiChain/kiipy-sdk/blob/main/CONTRIBUTING.md) document.
 - [ ] I have based my branch, and I am making a pull request against, the `main` branch.
 - [ ] Checks and tests pass locally.
 

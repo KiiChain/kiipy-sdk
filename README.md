@@ -6,7 +6,7 @@
 A python library for interacting with KiiChain and other Cosmos-based blockchain networks
 </p>
 
-[comment]: # (TODO: Add proper badges here)
+[comment]: # "TODO: Add proper badges here"
 
 <p align="center">
   <!-- <a href="https://pypi.org/project/kiipy/">
@@ -30,7 +30,7 @@ A python library for interacting with KiiChain and other Cosmos-based blockchain
   </a> -->
 </p>
 
-*This project has been forked from [Fetch AI's CosmPy](https://github.com/fetchai/cosmpy).*
+_This project has been forked from [Fetch AI's CosmPy](https://github.com/fetchai/cosmpy)._
 
 ## DEVELOPMENT NOTES
 
@@ -39,9 +39,9 @@ A python library for interacting with KiiChain and other Cosmos-based blockchain
 Details on how to setup the dev environment can be found in the [development guidelines][developing]. Using poetry virtual environment is highly encouraged to ensure seamless development.
 
 Notes:
+
 - Items that need to be looked into are marked as `TODO:` in the code and docs.
 - Workflows are failing due to usage limits. It's advisable to fix this to ensure code quality. Current workaround is to make sure to run corresponding checks and tests locally.
-
 
 ## Installation
 
@@ -54,17 +54,20 @@ pip install kiipy
 ### Install from source code
 
 1. Clone the repository
+
 ```
 git clone https://github.com/KiiBlockchain/kiipy.git
 cd kiipy
 ```
 
 2. Install the required dependencies
+
 ```
 poetry install
 ```
 
 3. Open the virtual environment
+
 ```
 poetry shell
 ```
@@ -89,12 +92,13 @@ for coin in balances:
 
 ## Documentation
 
-[comment]: # (TODO: Update this and other occurence with proper docs url)
+[comment]: # "TODO: Update this and other occurence with proper docs url"
+
 The full documentation can be found [here](https://docs.kiiglobal.io/kiipy/).
 
 ## Examples
 
-Under the `examples` directory, you can find examples of basic ledger interactions using `kiipy`, such as transferring tokens, staking, and deploying.
+Under the [`examples`](./examples/) directory, you can find examples of basic ledger interactions using `kiipy`, such as transferring tokens, staking, and deploying.
 
 ## Contributing
 
@@ -116,15 +120,14 @@ Read our [development guidelines][developing] to learn about the development pro
 
 ### Issues, Questions and Discussions
 
-We use [GitHub Issues][issues] for tracking requests and bugs, and [GitHub Discussions][discussion] for general questions and discussion.
+We use [GitHub Issues][issues] for tracking requests and bugs, and for general questions and discussion.
 
 ## License
 
 The KiiPy project is licensed under [Apache License 2.0][license].
 
-[contributing]: https://github.com/KiiBlockchain/kiipy/blob/main/CONTRIBUTING.md
-[developing]: https://github.com/KiiBlockchain/kiipy/blob/main/DEVELOPING.md
-[coc]: https://github.com/KiiBlockchain/kiipy/blob/main/CODE_OF_CONDUCT.md
-[discussion]: https://github.com/KiiBlockchain/kiipy/discussions
+[contributing]: ./CONTRIBUTING.md
+[developing]: ./DEVELOPING.md
+[coc]: ./CODE_OF_CONDUCT.md
 [issues]: https://github.com/KiiBlockchain/kiipy/issues
-[license]: https://github.com/KiiBlockchain/kiipy/blob/main/LICENSE
+[license]: ./LICENSE

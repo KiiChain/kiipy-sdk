@@ -17,8 +17,6 @@
 #
 # ------------------------------------------------------------------------------
 """Integration tests for basic transactions."""
-from typing import Optional
-
 import pytest
 
 from kiipy.aerial.client import LedgerClient
@@ -34,7 +32,7 @@ RERUNS_DELAY = 10
 class TestTx:
     """Test Basic Transaction"""
 
-    COIN = "tkii"
+    COIN = "ukii"
 
     def _get_network_config(self):
         """Get network config."""

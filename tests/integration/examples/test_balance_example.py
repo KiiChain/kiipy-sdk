@@ -42,9 +42,9 @@ def test_balance_example():
     )
 
     expected_address = "kii1pyt53arxkg5t4aww892esskltrf54mg88va98y"
-    expected_balance = 2500000000
+    expected_balance = 200000000
 
     assert (
-        f"{expected_address} has a balance of {expected_balance} tkii.".encode()
+        f"{expected_address} has a balance of {expected_balance} ukii.".encode()
         in proc.stdout
     ), proc.stdout

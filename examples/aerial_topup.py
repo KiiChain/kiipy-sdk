@@ -89,7 +89,7 @@ def main():
 
     # Top-up amount
     amount = args.top_up_amount
-    top_up_amount = Coin(amount=str(amount), denom="tkii")
+    top_up_amount = Coin(amount=str(amount), denom="ukii")
 
     # Minimum balance for task_wallet
     minimum_balance = args.minimum_balance

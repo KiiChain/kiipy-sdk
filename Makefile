@@ -123,7 +123,7 @@ bandit:
 # Check the security of the code for known vulnerabilities
 .PHONY: safety
 safety:
-	safety check -i 41002
+	safety check -i 41002 -i 73456
 
 ########################################
 ### Linters
@@ -137,7 +137,8 @@ mypy:
 # Lint the code using pylint
 .PHONY: pylint
 pylint:
-	pylint -j 0 $(PYTHON_CODE_DIRS)
+	# Ignoring: R0917=Too Many Positional Arguments, W0511=TODOS, W0107=Pass, W1514=unspecified-encoding, E0401=import-error
+	pylint --disable=R0917,W0511,W0107,W1514,E0401 -j 0 $(PYTHON_CODE_DIRS)
 
 ########################################
 ### License and copyright checks

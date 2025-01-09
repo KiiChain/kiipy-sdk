@@ -14,13 +14,6 @@ Contributions to the KiiPy library are welcome. As a contributor, here are the g
 
 Please read and follow our [Code of Conduct][coc].
 
-## <a name="question"></a> Question or Problem?
-
-Please use [GitHub Discussions][ghdiscussion] for support related questions and general discussions. Do NOT open issues as they are for bug reports and feature requests. This is because:
-
-- Questions and answers stay available for public viewing so your question/answer might help someone else.
-- GitHub Discussions voting system ensures the best answers are prominently visible.
-
 ## <a name="issue"></a> Found a Bug?
 
 If you find a bug in the source code [submit a bug report issue](#submit-issue).
@@ -120,7 +113,6 @@ Please follow the [Conventional Commits v1.0.0][convcommit]. The commit types mu
 
 [coc]: https://github.com/KiiBlockchain/kiipy/blob/main/CODE_OF_CONDUCT.md
 [developing]: https://github.com/KiiBlockchain/kiipy/blob/main/DEVELOPING.md
-[ghdiscussion]: https://github.com/KiiBlockchain/kiipy/discussions
 [issues]: https://github.com/KiiBlockchain/kiipy/issues
 [new-issue]: https://github.com/KiiBlockchain/kiipy/issues/new/choose
 [prs]: https://github.com/KiiBlockchain/kiipy/pulls

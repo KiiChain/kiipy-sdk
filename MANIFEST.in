@@ -19,3 +19,4 @@ recursive-exclude examples *.md
 recursive-exclude scripts *.py
 recursive-exclude scripts *.sh
 recursive-exclude tests *.py
+exclude pylintrc
