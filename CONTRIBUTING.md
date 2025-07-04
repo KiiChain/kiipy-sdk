@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-Contributions to the KiiPy library are welcome. As a contributor, here are the guidelines we would like you to follow:
+Contributions to the Kiijs library are welcome. As a contributor, here are the guidelines we would like you to follow:
 
 - [Code of Conduct](#coc)
 - [Question or Problem?](#question)
@@ -66,7 +66,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
 #### Reviewing a Pull Request
 
-The KiiPy team reserves the right not to accept pull requests from community members who haven't been good citizens of the community. Such behavior includes not following our [code of conduct][coc] and applies within or outside the managed channels.
+The Kiijs team reserves the right not to accept pull requests from community members who haven't been good citizens of the community. Such behavior includes not following our [code of conduct][coc] and applies within or outside the managed channels.
 
 When you contribute a new feature, the maintenance burden is transferred to the core team. This means that the benefit of the contribution must be compared against the cost of maintaining the feature.
 
@@ -88,7 +88,7 @@ After your pull request is merged, you can safely delete your branch and pull th
 
 To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
-- All code must pass our code quality checks (linters, formatters, etc). See the [development guide][developing] section for more detail.
+- All code must pass our code quality checks (linters, formatters, etc).
 - All features **must be tested** via unit-tests and if applicable integration-tests. Bug fixes also require tests, because the presence of bugs usually indicates insufficient test coverage. Tests help to: 
 
     1. Prove that your code works correctly, and
@@ -96,7 +96,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 
 - All public features **must be documented**.
 - All files must include a license header. 
-- Keep API compatibility in mind when you change any code under `kiipy`. Above version `1.0.0`, breaking changes can happen across versions with different left digit. Below version `1.0.0`, they can happen across versions with different middle digit. Reviewers of your pull request will comment on any API compatibility issues.
+- Keep API compatibility in mind when you change any code under `Kiijs`. Above version `1.0.0`, breaking changes can happen across versions with different left digit. Below version `1.0.0`, they can happen across versions with different middle digit. Reviewers of your pull request will comment on any API compatibility issues.
 
 ## <a name="commit"></a> Commit Message Convention
 
@@ -111,10 +111,9 @@ Please follow the [Conventional Commits v1.0.0][convcommit]. The commit types mu
 - **refactor**: A code change that neither fixes a bug nor adds a feature
 - **test**: Adding missing tests or correcting existing tests
 
-[coc]: https://github.com/KiiBlockchain/kiipy/blob/main/CODE_OF_CONDUCT.md
-[developing]: https://github.com/KiiBlockchain/kiipy/blob/main/DEVELOPING.md
-[issues]: https://github.com/KiiBlockchain/kiipy/issues
-[new-issue]: https://github.com/KiiBlockchain/kiipy/issues/new/choose
-[prs]: https://github.com/KiiBlockchain/kiipy/pulls
+[coc]: ./CODE_OF_CONDUCT.md
+[issues]: https://github.com/KiiChain/kiijs-sdk/issues
+[new-issue]: https://github.com/KiiChain/kiijs-sdk/issues/new/choose
+[prs]: https://github.com/KiiChain/kiijs-sdk/pulls
 [convcommit]: https://www.conventionalcommits.org/en/v1.0.0/
-[github]: https://github.com/KiiBlockchain/kiipy
+[github]: https://github.com/KiiChain/kiijs-sdk
